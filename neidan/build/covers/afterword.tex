@@ -1,0 +1,36 @@
+\documentclass[12pt]{article}
+\usepackage{fontspec}
+\usepackage[utf8]{inputenc}
+\setmainfont{Bodoni 72 Book}
+\usepackage[paperwidth=12in,paperheight=9in,margin=1in,headheight=0.0in,footskip=0.5in,includehead,includefoot,portrait]{geometry}
+\usepackage[absolute]{textpos}
+\TPGrid[0.5in, 0.25in]{23}{24}
+\parindent=0pt
+\parskip=12pt
+\usepackage{nopageno}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+
+\begin{document}
+
+\begin{center}
+\huge AFTERWORD
+\end{center}
+
+\vspace*{7\baselineskip}
+
+\begingroup
+\begin{center}
+``You got to go to the lonesome valley. \\
+``You got to go there by yourself. \\
+``Nobody else, nobody else can go for you. \\
+``You got to go there by yourself."
+\end{center}
+\endgroup
+
+\end{document}
