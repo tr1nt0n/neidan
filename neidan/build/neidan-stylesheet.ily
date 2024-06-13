@@ -7,16 +7,17 @@
 \include "../library.ily"
 \include "/Users/trintonprater/evans/lilypond/evans.ily"
 \include "/Users/trintonprater/trinton/lilypond/trinton-markups.ily"
+\include "/Users/trintonprater/trinton/lilypond/trinton-spanners.ily"
 \include "/Users/trintonprater/abjad-ext-microtones/abjadext/microtones/lilypond/ekmelos-ji-accidental-markups.ily"
 
 afterGraceFraction = #(cons 15 16)
 
-\header {
-    dedication = \markup \column {\line \override #'(font-name . "Bodoni72 Book Italic") { \fontsize #2 { "Anthropodermic" \hspace #20 "Bibliopegy" } } \line { \fontsize #23 \with-color #white "."} }
-    title = \markup  \override #'(font-name . "Source Han Serif SC Bold") \center-column { \line \fontsize #13 { "β: 内 丹" } \fontsize #23 \with-color #white "."}
-    subtitle = \markup \fontsize #5 \center-column { \line { \override #'(font-name . "Bodoni72 Book") { "( Nine Elixirs )" } } \fontsize #0.01 \with-color #white "."}
-    composer = \markup \override #'(font-name . "Bodoni72") \fontsize #-1 {"Trinton Hlynn (*2000)"}
-}
+% \header {
+%     dedication = \markup \column {\line \override #'(font-name . "Bodoni72 Book Italic") { \fontsize #2 { "Anthropodermic" \hspace #20 "Bibliopegy" } } \line { \fontsize #23 \with-color #white "."} }
+%     title = \markup  \override #'(font-name . "Source Han Serif SC Bold") \center-column { \line \fontsize #13 { "β: 内 丹" } \fontsize #23 \with-color #white "."}
+%     subtitle = \markup \fontsize #5 \center-column { \line { \override #'(font-name . "Bodoni72 Book") { "( Nine Elixirs )" } } \fontsize #0.01 \with-color #white "."}
+%     composer = \markup \override #'(font-name . "Bodoni72") \fontsize #-1 {"Trinton Hlynn (*2000)"}
+% }
 
 \layout {
     \accidentalStyle neo-modern
@@ -121,7 +122,7 @@ afterGraceFraction = #(cons 15 16)
         \override DynamicText.layer = 2
         \override DynamicText.whiteout-style = #'outline
         \override DynamicText.whiteout = 1
-        \override DynamicLineSpanner.staff-padding = 4
+        % \override DynamicLineSpanner.staff-padding = 4
 
         \override Glissando.thickness = #3
         \override Glissando.breakable = ##t
@@ -139,7 +140,7 @@ afterGraceFraction = #(cons 15 16)
         \override MeasureSpanner.thickness = #1.5
         \override MeasureSpanner.font-size = 7
         \override MeasureSpanner.font-name = "Bodoni72 Book"
-        \override MeasureSpanner.padding = 5
+        \override MeasureSpanner.padding = 7
         % \override MeasureSpanner.color = \二
 
         \override NoteCollision.merge-differently-dotted = ##t
@@ -177,6 +178,7 @@ afterGraceFraction = #(cons 15 16)
 
         \override TextScript.font-name = "Bodoni72 Book"
         \override TextScript.whiteout = 1
+        \override TextScript.whiteout-style = #'outline
         \override TextSpanner.font-name = "Bodoni72 Book"
 
         \override Tie.stencil = #flare-tie
@@ -257,6 +259,10 @@ afterGraceFraction = #(cons 15 16)
         \override Stem.stencil = ##f
         \override Tie.stencil = ##f
         \override Dots.stencil = ##f
+        \override Flag.stencil = ##f
+        \override Beam.stencil = ##f
+        \override Accidental.stencil = ##f
+        \override Rest.transparent = ##t
         \RemoveAllEmptyStaves
         % \override AccidentalSuggestion.direction = #DOWN
     } % just trying this out
@@ -313,13 +319,13 @@ afterGraceFraction = #(cons 15 16)
     % min-systems-per-page = 3
     % max-systems-per-page = 3
     system-separator-markup = \markup \fontsize #12 { \tremolo-moderato }
-    system-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 2) (stretchability . 30))
+    system-system-spacing = #'((basic-distance . 10) (minimum-distance . 10) (padding . 15) (stretchability . 30))
     indent = 20\mm
     short-indent = 15\mm
     bottom-margin = 10\mm
     left-margin = 10\mm
     right-margin = 10\mm
-    top-margin = 20\mm
+    top-margin = 30\mm
 
     oddHeaderMarkup = \markup ""
     evenHeaderMarkup = \markup ""

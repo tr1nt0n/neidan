@@ -81,21 +81,23 @@ boxed-markup = #(
 三 = #(rgb-color 125/255 200/255 240/255)
 四 = #(rgb-color 133/255 176/255 147/255)
 
-% U+1F3A4
+% U+E078
 
 string-clef = \markup {
     % \hspace #0.6
-    \fontsize #17
+    \fontsize #4.9
     \override #'(font-name . "ekmelos")
     \override #'(whiteout-style . "outline")
     \override #'(whiteout . 1)
     \override #'(layer . 27)
     {
         % \rotate #-45
-        \raise #-2.45
-        \char ##xe784
+        \raise #1
+        \char ##xe078
     }
 }
+
+% U+E06B
 
 body-clef = \markup {
     % \hspace #0.6
@@ -105,31 +107,39 @@ body-clef = \markup {
     \override #'(layer . 27)
     \center-column {
         \line {
-            \fontsize #17
-            % \rotate #-45
-            \raise #-2.45
-            \char ##xe784
+            \rotate #180
+            \fontsize #1
+            \raise #2.75
+            \char ##xe06b
         }
         \line {
-            % \rotate #-45
-            \fontsize #14
-            \raise #-6.5
-            \char ##xe7db
+            \rotate #180
+            \fontsize #1
+            \raise #3.5
+            \char ##xe06b
         }
     }
 }
 
 back-of-body-clef = \markup {
     % \hspace #0.6
-    \fontsize #14
     \override #'(font-name . "ekmelos")
     \override #'(whiteout-style . "outline")
     \override #'(whiteout . 1)
     \override #'(layer . 27)
-    {
-        % \rotate #-45
-        \raise #-2
-        \char ##xe7db
+    \center-column {
+        \line {
+            % \scale #'(-1 . 1)
+            \fontsize #1
+            \raise #2.75
+            \char ##xe06b
+        }
+        \line {
+            % \scale #'(-1 . 1)
+            \fontsize #1
+            \raise #3.5
+            \char ##xe06b
+        }
     }
 }
 
