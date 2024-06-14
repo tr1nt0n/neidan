@@ -200,8 +200,8 @@ def reset_line_positions(score, voice_names):
 _clef_name_to_info = {
     "body": (3, [7, 0, -7]),
     "back-of-body": (2, [7, -7]),
-    "string": (5, [7, 5.5, 4, 0, -7]),
-    "alto": (5, "revert"),
+    "string": (5, [7, 6, 4, 0, -7]),
+    "treble": (5, "revert"),
 }
 
 
@@ -210,7 +210,7 @@ def change_staff(clef_name, selector=trinton.select_leaves_by_index([0], pitched
         selections = selector(argument)
         first_leaf = abjad.select.leaf(selections, 0)
 
-        if clef_name != "alto":
+        if clef_name != "treble":
             clef = f"\{clef_name}-clef"
             clef_line_count = _clef_name_to_info[clef_name][0]
             clef_line_positions = _clef_name_to_info[clef_name][-1]
@@ -225,6 +225,7 @@ def change_staff(clef_name, selector=trinton.select_leaves_by_index([0], pitched
                     f"\override Staff.StaffSymbol.line-positions = #'{clef_line_positions}",
                     r"\override Staff.Clef.stencil = #ly:text-interface::print",
                     f"\override Staff.Clef.text = {clef}",
+                    r"\override Staff.BarLine.bar-extent = #'(-3.5 . 3.5)"
                     r"\set Staff.forceClef = ##t",
                 ],
                 site="before",
@@ -241,12 +242,13 @@ def change_staff(clef_name, selector=trinton.select_leaves_by_index([0], pitched
                     r"\staff-line-count 5",
                     r"\revert Staff.StaffSymbol.line-positions",
                     r"\revert Staff.Clef.stencil",
+                    r"\revert Staff.BarLine.bar-extent",
                     r"\set Staff.forceClef = ##t",
                 ],
                 site="before",
             )
 
-            abjad.attach(abjad.Clef("alto"), first_leaf)
+            abjad.attach(abjad.Clef("treble"), first_leaf)
             abjad.attach(literal, first_leaf)
 
     return change

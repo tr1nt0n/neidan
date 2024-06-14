@@ -90,7 +90,7 @@ afterGraceFraction = #(cons 15 16)
 
         % \override BarLine.color = \二
         % \override BarLine.transparent = ##t
-        \override BarLine.hair-thickness = 0.5
+        \override BarLine.hair-thickness = 5
         \override BarLine.thick-thickness = #10
         \override BarLine.layer = 2
         % \override BarLine.X-extent = #'(0 . 0)
@@ -124,7 +124,7 @@ afterGraceFraction = #(cons 15 16)
         \override DynamicText.whiteout = 1
         % \override DynamicLineSpanner.staff-padding = 4
 
-        \override Glissando.thickness = #3
+        \override Glissando.thickness = #4
         \override Glissando.breakable = ##t
 
         \override Hairpin.to-barline = ##f
@@ -263,6 +263,8 @@ afterGraceFraction = #(cons 15 16)
         \override Beam.stencil = ##f
         \override Accidental.stencil = ##f
         \override Rest.transparent = ##t
+        \override NoteHead.no-ledgers = ##t
+        \override NoteHead.duration-log = 2
         \RemoveAllEmptyStaves
         % \override AccidentalSuggestion.direction = #DOWN
     } % just trying this out
@@ -316,16 +318,16 @@ afterGraceFraction = #(cons 15 16)
 	        #:music "haydn"
 	        #:brace "haydn"
 	))
-    % min-systems-per-page = 3
-    % max-systems-per-page = 3
+    min-systems-per-page = 3
+    max-systems-per-page = 3
     system-separator-markup = \markup \fontsize #12 { \tremolo-moderato }
-    system-system-spacing = #'((basic-distance . 10) (minimum-distance . 10) (padding . 15) (stretchability . 30))
+    system-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 7) (stretchability . 30))
     indent = 20\mm
     short-indent = 15\mm
     bottom-margin = 10\mm
     left-margin = 10\mm
     right-margin = 10\mm
-    top-margin = 30\mm
+    top-margin = 20\mm
 
     oddHeaderMarkup = \markup ""
     evenHeaderMarkup = \markup ""
