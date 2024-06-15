@@ -37,6 +37,64 @@ def neidan_score(time_signatures):
 # notation tools
 
 
+def accidentals(selector, accidental_strings, site="before"):
+    def make_accidentals(argument):
+        selections = selector(argument)
+        ties = abjad.select.logical_ties(selections)
+        for tie, accidental in zip(ties, accidental_strings):
+            if isinstance(accidental, tuple):
+                string_I = accidental[0]
+                string_II = accidental[-1]
+
+                accidental_markup = rf"""\markup \fontsize #-3 \raise #0.4 {{ \center-column {{ \line {{ {string_I} }} \line {{ {string_II} }} }} }}"""
+
+            else:
+                accidental_markup = rf"""\markup  \fontsize #1 {{ {accidental} }}"""
+
+            first_leaf = abjad.select.leaf(tie, 0)
+            first_leaf.note_head.is_forced = True
+
+            literal = abjad.LilyPondLiteral(
+                [
+                    r"\once \override Staff.Accidental.stencil = #ly:text-interface::print",
+                    rf"\once \override Staff.Accidental.text = {accidental_markup}",
+                ],
+                site=site,
+            )
+
+            abjad.attach(literal, first_leaf)
+
+    return make_accidentals
+
+
+def connection_stems(selector, heights, site="before"):
+    def stems(argument):
+        selections = selector(argument)
+        ties = abjad.select.logical_ties(selections)
+
+        for tie, height in zip(ties, heights):
+            first_leaf = abjad.select.leaf(tie, 0)
+
+            literal = abjad.LilyPondLiteral(
+                [
+                    r"\once \revert Staff.Stem.stencil",
+                    rf"\once \override Staff.Stem.details.lengths = #'({height})",
+                    # r"\once \override Staff.Stem.X-extent = ##f",
+                    # r"\once \override Staff.Stem.X-offset = 0",
+                    r"\once \override Staff.Stem.Y-extent = ##f",
+                    r"\once \override Staff.Stem.Y-offset = 0",
+                    r"\once \override Staff.Stem.layer = 0",
+                    r"\once \override Staff.Stem.direction = #UP",
+                    r"\once \override Staff.Stem.thickness = #2",
+                ],
+                site=site,
+            )
+
+            abjad.attach(literal, first_leaf)
+
+    return stems
+
+
 def graphic_bow_pressure_spanner(
     peaks=[0, 1, 4, 2],
     peak_direction=abjad.DOWN,
@@ -146,7 +204,7 @@ def footnote_command(
     return footnote
 
 
-def clean_ametric_ties(selector=trinton.logical_ties(pitched=True), rh=False):
+def clean_ametric_ties(selector=trinton.logical_ties(pitched=True)):
     def clean(argument):
         selections = selector(argument)
 

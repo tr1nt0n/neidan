@@ -233,7 +233,7 @@ afterGraceFraction = #(cons 15 16)
         \consists Grob_pq_engraver
         \consists #Interrupt_heads_engraver
 
-        \override Accidental.X-extent = ##f
+        % \override Accidental.X-extent = ##f
 
         \override AccidentalSuggestion.direction = #UP
         \override AccidentalSuggestion.font-size = 0.2
@@ -265,6 +265,8 @@ afterGraceFraction = #(cons 15 16)
         \override Rest.transparent = ##t
         \override NoteHead.no-ledgers = ##t
         \override NoteHead.duration-log = 2
+        \override TupletBracket.stencil = ##f
+        \override TupletNumber.stencil = ##f
         \RemoveAllEmptyStaves
         % \override AccidentalSuggestion.direction = #DOWN
     } % just trying this out
@@ -321,7 +323,7 @@ afterGraceFraction = #(cons 15 16)
     min-systems-per-page = 3
     max-systems-per-page = 3
     system-separator-markup = \markup \fontsize #12 { \tremolo-moderato }
-    system-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 7) (stretchability . 30))
+    system-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 5) (stretchability . 30))
     indent = 20\mm
     short-indent = 15\mm
     bottom-margin = 10\mm

@@ -28,8 +28,9 @@
             \tweak text \long-fermata \startMeasureSpanner
             \time 6/4
             s1 * 3/2
-            - \tweak padding #7
-            ^ \markup \fontsize #3 { "( senza misura )" }
+            - \tweak Y-extent ##f
+            - \tweak Y-offset 10
+            ^ \markup \fontsize #3 \override #'(font-name . "Bodoni72 Book Italic") { "( senza misura )" }
             \stopMeasureSpanner
             \tweak text \very-short-fermata \startMeasureSpanner
             \time 1/4
@@ -72,6 +73,10 @@
             \tweak text \long-fermata \startMeasureSpanner
             \time 6/4
             s1 * 3/2
+            - \tweak X-extent ##f
+            - \tweak Y-extent ##f
+            - \tweak Y-offset 10.5
+            ^ \markup \fontsize #3 \override #'(font-name . "Bodoni72 Book Italic") { "Completely periodic pulse" }
             \stopMeasureSpanner
             \tweak text \long-fermata \startMeasureSpanner
             \time 6/4
@@ -807,11 +812,140 @@
                             \once \override Accidental.stencil = ##f
                             \once \override NoteHead.transparent = ##t
                             b'16
+                            \stopBowSpan
                             \stopTextSpanOne
                         }
-                        \once \revert Staff.StaffSymbol.line-positions
-                        s1 * 3/2
-                        \stopBowSpan
+                        \once \override TupletBracket.stencil = ##f
+                        \once \override TupletNumber.stencil = ##f
+                        \times 8/13
+                        {
+                            \once \override RepeatTie.transparent = ##t
+                            \once \override Stem.stencil = ##f
+                            \once \override Beam.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override Dots.stencil = ##f
+                            \once \override Tie.stencil = ##f
+                            \once \override NoteHead.duration-log = 2
+                            \override Staff.NoteHead.no-ledgers = ##t\staff-line-count 5
+                            \override Staff.StaffSymbol.line-positions = #'(7 6 4 0 -7)
+                            \override Staff.Clef.stencil = #ly:text-interface::print
+                            \override Staff.Clef.text = \string-clef
+                            \override Staff.BarLine.bar-extent = #'(-3.5 . 3.5)\set Staff.forceClef = ##t
+                            \clef "treble"
+                            \tweak style #'cross
+                            a''8.
+                            \pp
+                            - \tweak padding #6
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \upright { "legno bat." } \hspace #0.5 }
+                            - \tweak bound-details.right.padding -4
+                            \startTextSpan
+                            - \tweak stencil #constante-hairpin
+                            \<
+                            \once \override RepeatTie.transparent = ##t
+                            \once \override Stem.stencil = ##f
+                            \once \override Beam.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override Dots.stencil = ##f
+                            \once \override Tie.stencil = ##f
+                            \once \override NoteHead.duration-log = 2
+                            \tweak style #'cross
+                            a''8.
+                            \once \override RepeatTie.transparent = ##t
+                            \once \override Stem.stencil = ##f
+                            \once \override Beam.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override Dots.stencil = ##f
+                            \once \override Tie.stencil = ##f
+                            \once \override NoteHead.duration-log = 2
+                            \tweak style #'cross
+                            a''8.
+                            \once \override RepeatTie.transparent = ##t
+                            \once \override Stem.stencil = ##f
+                            \once \override Beam.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override Dots.stencil = ##f
+                            \once \override Tie.stencil = ##f
+                            \once \override NoteHead.duration-log = 2
+                            \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                            \once \override Staff.Accidental.text = \markup \fontsize #-3 \raise #0.4 { \center-column { \line { III } \line { IV } } }
+                            f''!8.
+                            \<
+                            \once \override RepeatTie.transparent = ##t
+                            \once \override Stem.stencil = ##f
+                            \once \override Beam.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override Dots.stencil = ##f
+                            \once \override Tie.stencil = ##f
+                            \once \override NoteHead.duration-log = 2
+                            d''8.
+                            \once \override RepeatTie.transparent = ##t
+                            \once \override Stem.stencil = ##f
+                            \once \override Beam.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override Dots.stencil = ##f
+                            \once \override Tie.stencil = ##f
+                            \once \override NoteHead.duration-log = 2
+                            b'8.
+                            \once \override RepeatTie.transparent = ##t
+                            \once \override Stem.stencil = ##f
+                            \once \override Beam.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override Dots.stencil = ##f
+                            \once \override Tie.stencil = ##f
+                            \once \override NoteHead.duration-log = 2
+                            g'8.
+                            \once \override RepeatTie.transparent = ##t
+                            \once \override Stem.stencil = ##f
+                            \once \override Beam.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override Dots.stencil = ##f
+                            \once \override Tie.stencil = ##f
+                            \once \override NoteHead.duration-log = 2
+                            e'8.
+                            \once \override RepeatTie.transparent = ##t
+                            \once \override Stem.stencil = ##f
+                            \once \override Beam.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override Dots.stencil = ##f
+                            \once \override Tie.stencil = ##f
+                            \once \override NoteHead.duration-log = 2
+                            c'8.
+                            \once \override RepeatTie.transparent = ##t
+                            \once \override Stem.stencil = ##f
+                            \once \override Beam.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override Dots.stencil = ##f
+                            \once \override Tie.stencil = ##f
+                            \once \override NoteHead.duration-log = 2
+                            b8.
+                            \once \override RepeatTie.transparent = ##t
+                            \once \override Stem.stencil = ##f
+                            \once \override Beam.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override Dots.stencil = ##f
+                            \once \override Tie.stencil = ##f
+                            \once \override NoteHead.duration-log = 2
+                            b8.
+                            \fff
+                            \once \override RepeatTie.transparent = ##t
+                            \once \override Stem.stencil = ##f
+                            \once \override Beam.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override Dots.stencil = ##f
+                            \once \override Tie.stencil = ##f
+                            \once \override NoteHead.duration-log = 2
+                            b8.
+                            \once \override RepeatTie.transparent = ##t
+                            \once \override Stem.stencil = ##f
+                            \once \override Beam.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override Dots.stencil = ##f
+                            \once \override Tie.stencil = ##f
+                            \once \override NoteHead.duration-log = 2
+                            b8.
+                            \stopTextSpan
+                        }
                         \once \revert Staff.StaffSymbol.line-positions
                         s1 * 3/2
                     }
@@ -1069,18 +1203,93 @@
                         R1 * 1/2
                           %! +SCORE
                         \stopStaff \startStaff
-                          %! +SCORE
-                        \once \override Staff.BarLine.transparent = ##f
-                        \once \revert Staff.StaffSymbol.line-positions
-                          %! +SCORE
-                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                          %! +SCORE
-                        \once \override Staff.TimeSignature.transparent = ##t
-                          %! +SCORE
-                        \once \override MultiMeasureRest.transparent = ##t
-                        R1 * 3/2
-                          %! +SCORE
-                        \stopStaff \startStaff
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \times 12/13
+                        {
+                            \override Dots.staff-position = #2
+                            \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                            \once \override Staff.Accidental.text = \markup \fontsize #-3 \raise #0.4 { \center-column { \line { III } \line { IV } } }
+                            b!2
+                              %! abjad.glissando(7)
+                            - \abjad-zero-padding-glissando
+                              %! abjad.glissando(7)
+                            \glissando
+                            ~
+                            \once \override Accidental.stencil = ##f
+                            \once \override NoteHead.no-ledgers = ##t
+                            \once \override NoteHead.transparent = ##t
+                              %! abjad.glissando(1)
+                            \hide NoteHead
+                              %! abjad.glissando(1)
+                            \override Accidental.stencil = ##f
+                              %! abjad.glissando(1)
+                            \override NoteColumn.glissando-skip = ##t
+                              %! abjad.glissando(1)
+                            \override NoteHead.no-ledgers = ##t
+                            b8
+                            \big-half-harmonic
+                            \once \revert Staff.Stem.stencil
+                            \once \override Staff.Stem.details.lengths = #'(13.2)
+                            \once \override Staff.Stem.Y-extent = ##f
+                            \once \override Staff.Stem.Y-offset = 0
+                            \once \override Staff.Stem.layer = 0
+                            \once \override Staff.Stem.direction = #UP
+                            \once \override Staff.Stem.thickness = #2
+                              %! abjad.glissando(6)
+                            \revert Accidental.stencil
+                              %! abjad.glissando(6)
+                            \revert NoteColumn.glissando-skip
+                              %! abjad.glissando(6)
+                            \revert NoteHead.no-ledgers
+                              %! abjad.glissando(6)
+                            \undo \hide NoteHead
+                            b'2
+                              %! abjad.glissando(7)
+                            - \abjad-zero-padding-glissando
+                              %! abjad.glissando(7)
+                            \glissando
+                            ~
+                            \once \override Accidental.stencil = ##f
+                            \once \override NoteHead.no-ledgers = ##t
+                            \once \override NoteHead.transparent = ##t
+                              %! abjad.glissando(1)
+                            \hide NoteHead
+                              %! abjad.glissando(1)
+                            \override Accidental.stencil = ##f
+                              %! abjad.glissando(1)
+                            \override NoteColumn.glissando-skip = ##t
+                              %! abjad.glissando(1)
+                            \override NoteHead.no-ledgers = ##t
+                            b'8
+                            \once \revert Staff.Stem.stencil
+                            \once \override Staff.Stem.details.lengths = #'(7.5)
+                            \once \override Staff.Stem.Y-extent = ##f
+                            \once \override Staff.Stem.Y-offset = 0
+                            \once \override Staff.Stem.layer = 0
+                            \once \override Staff.Stem.direction = #UP
+                            \once \override Staff.Stem.thickness = #2
+                              %! abjad.glissando(6)
+                            \revert Accidental.stencil
+                              %! abjad.glissando(6)
+                            \revert NoteColumn.glissando-skip
+                              %! abjad.glissando(6)
+                            \revert NoteHead.no-ledgers
+                              %! abjad.glissando(6)
+                            \undo \hide NoteHead
+                            \afterGrace
+                            a''4.
+                            - \abjad-zero-padding-glissando
+                            \glissando
+                            {
+                                \once \override Stem.stencil = ##f
+                                \once \override Flag.stencil = ##f
+                                \once \override NoteHead.no-ledgers = ##t
+                                \once \override Accidental.stencil = ##f
+                                \revert Dots.staff-position
+                                \once \override NoteHead.transparent = ##t
+                                a''16
+                            }
+                        }
                           %! +SCORE
                         \once \override Staff.BarLine.transparent = ##f
                         \once \revert Staff.StaffSymbol.line-positions
