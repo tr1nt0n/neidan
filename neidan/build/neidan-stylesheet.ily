@@ -91,7 +91,7 @@ afterGraceFraction = #(cons 15 16)
         % \override BarLine.color = \二
         % \override BarLine.transparent = ##t
         \override BarLine.hair-thickness = 5
-        \override BarLine.thick-thickness = #10
+        \override BarLine.thick-thickness = #15
         \override BarLine.layer = 2
         % \override BarLine.X-extent = #'(0 . 0)
         % \override BarLine.X-extent = ##f
@@ -122,12 +122,18 @@ afterGraceFraction = #(cons 15 16)
         \override DynamicText.layer = 2
         \override DynamicText.whiteout-style = #'outline
         \override DynamicText.whiteout = 1
-        % \override DynamicLineSpanner.staff-padding = 4
+
+        \override DynamicTextSpanner.layer = 2
+        \override DynamicTextSpanner.whiteout-style = #'outline
+        \override DynamicTextSpanner.whiteout = 1
 
         \override Glissando.thickness = #4
         \override Glissando.breakable = ##t
 
         \override Hairpin.to-barline = ##f
+        \override Hairpin.layer = 2
+        \override Hairpin.whiteout-style = #'outline
+        \override Hairpin.whiteout = 1
 
         % \override KeyCancellation.color = \二
 

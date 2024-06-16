@@ -84,13 +84,17 @@ def connection_stems(selector, heights, site="before"):
                     r"\once \override Staff.Stem.Y-extent = ##f",
                     r"\once \override Staff.Stem.Y-offset = 0",
                     r"\once \override Staff.Stem.layer = 0",
-                    r"\once \override Staff.Stem.direction = #UP",
+                    r"\once \override Staff.Stem.direction = #DOWN",
                     r"\once \override Staff.Stem.thickness = #2",
+                    r"\once \override Flag.stencil = ##f",
+                    r"\once \override Dots.stencil = ##f",
                 ],
                 site=site,
             )
 
-            abjad.attach(literal, first_leaf)
+            abjad.detach(abjad.LilyPondLiteral, first_leaf)
+
+            abjad.attach(literal, first_leaf, direction=abjad.DOWN)
 
     return stems
 
