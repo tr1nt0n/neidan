@@ -107,11 +107,19 @@ afterGraceFraction = #(cons 15 16)
 
         \override BendAfter.thickness = #3
 
+        % \override BreathingSign.text = \markup {
+        %     \fontsize #7.5
+        %     \override #'(font-name . "ekmelos")
+        %     \char ##xe4D5
+        % }
+
         \override BreathingSign.text = \markup {
-            \fontsize #7.5
-            \override #'(font-name . "ekmelos")
-            \char ##xe4D5
+            \fontsize #4
+            \musicglyph "scripts.caesura.curved"
         }
+        \override BreathingSign.whiteout-style = #'outline
+        \override BreathingSign.whiteout = 1
+        \override BreathingSign.layer = 10
 
         \override Clef.layer = 2
         \override Clef.whiteout-style = #'outline

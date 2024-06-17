@@ -37,7 +37,7 @@ def neidan_score(time_signatures):
 # notation tools
 
 
-def accidentals(selector, accidental_strings, site="before"):
+def accidentals(selector, accidental_strings, site="before", horizontal_arrow=False):
     def make_accidentals(argument):
         selections = selector(argument)
         ties = abjad.select.logical_ties(selections)
@@ -241,7 +241,11 @@ def reset_line_positions(score, voice_names):
     voices = [score[_] for _ in voice_names]
 
     reset = abjad.LilyPondLiteral(
-        r"\once \revert Staff.StaffSymbol.line-positions", "before"
+        [
+            r"\once \revert Staff.StaffSymbol.line-positions",
+            r"\once \override Staff.Clef.stencil = ##f",
+        ],
+        site="before",
     )
 
     for voice in voices:

@@ -19,7 +19,7 @@
             \time 7/8
             s1 * 7/8
             ^ \markup {
-              \raise #16.5 \with-dimensions-from \null
+              \raise #14 \with-dimensions-from \null
               \override #'(font-size . 5.5)
               \concat {
                   \abjad-metronome-mark-markup #3 #0 #2 #"80" 
@@ -102,6 +102,10 @@
             \tweak text \short-fermata \startMeasureSpanner
             \time 2/4
             s1 * 1/2
+            - \tweak X-extent ##f
+            - \tweak Y-extent ##f
+            - \tweak Y-offset 11
+            ^ \markup \fontsize #3 \override #'(font-name . "Bodoni72 Book Italic") { "( No more pulse )" }
             \stopMeasureSpanner
             \tweak text \very-short-fermata \startMeasureSpanner
             \time 1/4
@@ -335,6 +339,7 @@
                           %! +SCORE
                         \once \override Rest.transparent = ##t
                         \once \revert Staff.StaffSymbol.line-positions
+                        \once \override Staff.Clef.stencil = ##f
                           %! +SCORE
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 3/16
@@ -552,6 +557,7 @@
                           %! +SCORE
                         \once \override Rest.transparent = ##t
                         \once \revert Staff.StaffSymbol.line-positions
+                        \once \override Staff.Clef.stencil = ##f
                           %! +SCORE
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 3/16
@@ -1125,6 +1131,7 @@
                           %! +SCORE
                         \once \override Rest.transparent = ##t
                         \once \revert Staff.StaffSymbol.line-positions
+                        \once \override Staff.Clef.stencil = ##f
                           %! +SCORE
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
@@ -1177,18 +1184,142 @@
                             \stopBowSpan
                             \stopTextSpanOne
                         }
+                        \once \override TupletBracket.stencil = ##f
+                        \once \override TupletNumber.stencil = ##f
+                        \times 4/5
+                        {
+                            \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                            \once \override Staff.Accidental.text = \markup \fontsize #-3 \raise #0.4 { \center-column { \line { III } \line { IV } } }
+                            \once \revert Staff.Stem.stencil
+                            \once \override Staff.Stem.details.lengths = #'(10.7)
+                            \once \override Staff.Stem.Y-extent = ##f
+                            \once \override Staff.Stem.Y-offset = 0
+                            \once \override Staff.Stem.layer = 0
+                            \once \override Staff.Stem.direction = #DOWN
+                            \once \override Staff.Stem.thickness = #2
+                            \once \override Flag.stencil = ##f
+                            \once \override Dots.stencil = ##f
+                            \override Staff.NoteHead.no-ledgers = ##t\staff-line-count 5
+                            \override Staff.StaffSymbol.line-positions = #'(7 6 4 0 -7)
+                            \override Staff.Clef.stencil = #ly:text-interface::print
+                            \override Staff.Clef.text = \string-clef
+                            \override Staff.BarLine.bar-extent = #'(-3.5 . 3.5)\set Staff.forceClef = ##t
+                            \clef "treble"
+                            b'!8.
+                            _ \accent
+                            _ \fff
+                            - \tweak padding #5.5
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \hspace #-7 { "legno bat." } \hspace #0.5 }
+                            - \tweak bound-details.right.padding 2.5
+                            \startTextSpan
+                            \override Dots.staff-position = #2
+                            \once \override RepeatTie.transparent = ##t
+                            \once \override Stem.stencil = ##f
+                            \once \override Beam.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override Dots.stencil = ##f
+                            \once \override Tie.stencil = ##f
+                            \once \override NoteHead.duration-log = 2
+                            \override Staff.NoteHead.no-ledgers = ##t\staff-line-count 3
+                            \override Staff.StaffSymbol.line-positions = #'(7 0 -7)
+                            \override Staff.Clef.stencil = #ly:text-interface::print
+                            \override Staff.Clef.text = \body-clef
+                            \override Staff.BarLine.bar-extent = #'(-3.5 . 3.5)\set Staff.forceClef = ##t
+                            \clef "treble"
+                            \afterGrace
+                            b''8
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.1
+                                        #:dynamic "ppp"
+                                        #:hspace -0.25
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
+                            \stopTextSpan
+                            - \abjad-zero-padding-glissando
+                            \glissando
+                            - \tweak padding #5.5
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \hspace #-2 { "l. trat." } \hspace #0.5 }
+                            - \tweak bound-details.right.padding -1
+                            \startTextSpan
+                            {
+                                \once \override RepeatTie.transparent = ##t
+                                \once \override Stem.stencil = ##f
+                                \once \override Beam.stencil = ##f
+                                \once \override Flag.stencil = ##f
+                                \once \override Dots.stencil = ##f
+                                \once \override Tie.stencil = ##f
+                                \once \override NoteHead.duration-log = 2
+                                \once \override Stem.stencil = ##f
+                                \once \override Flag.stencil = ##f
+                                \once \override NoteHead.no-ledgers = ##t
+                                \once \override Accidental.stencil = ##f
+                                \revert Dots.staff-position
+                                \once \override NoteHead.transparent = ##t
+                                d''16
+                                \stopTextSpan
+                            }
+                        }
+                        \once \override RepeatTie.transparent = ##t
+                        \once \override Stem.stencil = ##f
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \override Staff.NoteHead.no-ledgers = ##t\staff-line-count 2
+                        \override Staff.StaffSymbol.line-positions = #'(7 -7)
+                        \override Staff.Clef.stencil = #ly:text-interface::print
+                        \override Staff.Clef.text = \back-of-body-clef
+                        \override Staff.BarLine.bar-extent = #'(-3.5 . 3.5)\set Staff.forceClef = ##t
+                        \clef "treble"
+                        \afterGrace
+                        b'\breve.
+                        ^ \markup { \hspace #-1 "( back of body )" }
+                        - \tweak Y-extent ##f
+                        - \tweak Y-offset 0
+                        - \tweak padding -4
+                        \startBowSpan #'((0 . 0) (0.24 . -3) (0.27999999999999997 . -1) (0.6 . -4) (0.6 . -1) (1.0 . -5))
+                        - \tweak font-size -4- \tweak Y-offset -1
+                        - \tweak padding #0
+                        - \abjad-dashed-line-with-up-hook
+                        - \tweak bound-details.left.text \markup \concat { \gridato-twist-bow \hspace #0.5 }
+                        - \tweak bound-details.right.padding -0.5
+                        \startTextSpanOne
+                        {
+                            \once \override RepeatTie.transparent = ##t
+                            \once \override Stem.stencil = ##f
+                            \once \override Beam.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override Dots.stencil = ##f
+                            \once \override Tie.stencil = ##f
+                            \once \override NoteHead.duration-log = 2
+                            \once \override Stem.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override NoteHead.no-ledgers = ##t
+                            \once \override Accidental.stencil = ##f
+                            \once \override NoteHead.transparent = ##t
+                            b'16
+                            \stopBowSpan
+                            \stopTextSpanOne
+                            \breathe
+                        }
                         \once \revert Staff.StaffSymbol.line-positions
-                        s1 * 1/4
-                        \stopBowSpan
-                        \once \revert Staff.StaffSymbol.line-positions
-                        s1 * 3
-                        \once \revert Staff.StaffSymbol.line-positions
+                        \once \override Staff.Clef.stencil = ##f
                         s1 * 1
                           %! +SCORE
                         \once \override MultiMeasureRest.transparent = ##t
                           %! +SCORE
                         \once \override Rest.transparent = ##t
                         \once \revert Staff.StaffSymbol.line-positions
+                        \once \override Staff.Clef.stencil = ##f
                           %! +SCORE
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
@@ -1202,8 +1333,8 @@
                     {
                           %! +SCORE
                         \once \override Staff.BarLine.transparent = ##f
-                        \once \override Staff.Clef.transparent = ##t
                         \once \revert Staff.StaffSymbol.line-positions
+                        \once \override Staff.Clef.stencil = ##f
                           %! +SCORE
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                           %! +SCORE
@@ -1213,7 +1344,6 @@
                         R1 * 7/8
                           %! +SCORE
                         \stopStaff \startStaff
-                        \footnote #'(-2 . 1) \markup \fontsize #1 { \override #'(font-name . "Bodoni72 Book Italic") { \column { " quickly tap fingertips 2-5 on body " } } }
                         \override Staff.NoteHead.no-ledgers = ##t\staff-line-count 3
                         \override Staff.StaffSymbol.line-positions = #'(7 0 -7)
                         \override Staff.Clef.stencil = #ly:text-interface::print
@@ -1291,6 +1421,7 @@
                           %! +SCORE
                         \once \override Staff.BarLine.transparent = ##f
                         \once \revert Staff.StaffSymbol.line-positions
+                        \once \override Staff.Clef.stencil = ##f
                           %! +SCORE
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                           %! +SCORE
@@ -1305,6 +1436,7 @@
                         \once \override MultiMeasureRest.transparent = ##t
                         \once \override Rest.transparent = ##t
                         \once \revert Staff.StaffSymbol.line-positions
+                        \once \override Staff.Clef.stencil = ##f
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                           %! +SCORE
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
@@ -1355,6 +1487,7 @@
                           %! +SCORE
                         \once \override Staff.BarLine.transparent = ##f
                         \once \revert Staff.StaffSymbol.line-positions
+                        \once \override Staff.Clef.stencil = ##f
                           %! +SCORE
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                           %! +SCORE
@@ -1369,6 +1502,7 @@
                         \once \override MultiMeasureRest.transparent = ##t
                         \once \override Rest.transparent = ##t
                         \once \revert Staff.StaffSymbol.line-positions
+                        \once \override Staff.Clef.stencil = ##f
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                           %! +SCORE
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
@@ -1440,6 +1574,7 @@
                           %! +SCORE
                         \once \override Staff.BarLine.transparent = ##f
                         \once \revert Staff.StaffSymbol.line-positions
+                        \once \override Staff.Clef.stencil = ##f
                           %! +SCORE
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                           %! +SCORE
@@ -1455,6 +1590,8 @@
                             \override Dots.staff-position = #2
                             \once \override Staff.Accidental.stencil = #ly:text-interface::print
                             \once \override Staff.Accidental.text = \markup \fontsize #-3 \raise #0.4 { \center-column { \line { III } \line { IV } } }
+                            \set Staff.forceClef = ##t
+                            \clef "treble"
                             b!2
                               %! abjad.glissando(7)
                             - \abjad-zero-padding-glissando
@@ -1525,6 +1662,7 @@
                           %! +SCORE
                         \once \override Staff.BarLine.transparent = ##f
                         \once \revert Staff.StaffSymbol.line-positions
+                        \once \override Staff.Clef.stencil = ##f
                           %! +SCORE
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                           %! +SCORE
@@ -1538,6 +1676,11 @@
                         {
                             \once \override Staff.Accidental.stencil = #ly:text-interface::print
                             \once \override Staff.Accidental.text = \markup \fontsize #-3 \raise #0.4 { \center-column { \line { III } \line { IV } } }
+                            \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                            \once \override Staff.Accidental.text = \markup \fontsize #-3 \raise #0.4 { \center-column { \line { III } \line { IV } } }
+                            \set Staff.forceClef = ##t
+                            \set Staff.forceClef = ##t
+                            \clef "treble"
                             \tweak style #'harmonic
                             g''!4
                             \tweak style #'harmonic
@@ -1550,6 +1693,7 @@
                         \once \override MultiMeasureRest.transparent = ##t
                         \once \override Rest.transparent = ##t
                         \once \revert Staff.StaffSymbol.line-positions
+                        \once \override Staff.Clef.stencil = ##f
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                           %! +SCORE
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
@@ -1564,6 +1708,7 @@
                           %! +SCORE
                         \once \override Staff.BarLine.transparent = ##f
                         \once \revert Staff.StaffSymbol.line-positions
+                        \once \override Staff.Clef.stencil = ##f
                           %! +SCORE
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                           %! +SCORE
@@ -1573,47 +1718,176 @@
                         R1 * 1/2
                           %! +SCORE
                         \stopStaff \startStaff
-                          %! +SCORE
-                        \once \override Staff.BarLine.transparent = ##f
-                        \once \revert Staff.StaffSymbol.line-positions
-                          %! +SCORE
-                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                          %! +SCORE
-                        \once \override Staff.TimeSignature.transparent = ##t
-                          %! +SCORE
-                        \once \override MultiMeasureRest.transparent = ##t
-                        R1 * 1/4
-                          %! +SCORE
-                        \stopStaff \startStaff
-                          %! +SCORE
-                        \once \override Staff.BarLine.transparent = ##f
-                        \once \revert Staff.StaffSymbol.line-positions
-                          %! +SCORE
-                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                          %! +SCORE
-                        \once \override Staff.TimeSignature.transparent = ##t
-                          %! +SCORE
-                        \once \override MultiMeasureRest.transparent = ##t
-                        R1 * 3
-                          %! +SCORE
-                        \stopStaff \startStaff
-                          %! +SCORE
-                        \once \override Staff.BarLine.transparent = ##f
-                        \once \revert Staff.StaffSymbol.line-positions
-                          %! +SCORE
-                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                          %! +SCORE
-                        \once \override Staff.TimeSignature.transparent = ##t
-                          %! +SCORE
-                        \once \override MultiMeasureRest.transparent = ##t
-                        R1 * 1
-                          %! +SCORE
-                        \stopStaff \startStaff
+                        \times 4/5
+                        {
+                            \once \override NoteHead.stencil = #ly:text-interface::print
+                            \once \override NoteHead.text = \markup \fontsize #4 \override #'(font-name . "ekmelos") { \char ##xec64 }
+                            \set Staff.forceClef = ##t
+                            \clef "treble"
+                            e''16.
+                            \footnote #'(0.5 . 1) \markup \fontsize #1 { \override #'(font-name . "Bodoni72 Book Italic") { \column { " strike open strings with bow, let ring shortly, then stop strings with left hand " } } }
+                            \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                            \once \override Staff.Accidental.text = \markup \fontsize #-3 \raise #0.4 { \center-column { \line { III } \line { IV } } }
+                            \tweak style #'harmonic
+                            g''!16.
+                            r16
+                            \footnote #'(-1 . 1) \markup \fontsize #1 { \override #'(font-name . "Bodoni72 Book Italic") { \column { " tap front of bridge with fingertips " } } }
+                            \tweak style #'cross
+                            a''32
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.1
+                                        #:dynamic "mf"
+                                        #:hspace -0.2
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
+                            \tweak style #'cross
+                            a''32
+                            - \accent
+                        }
+                        \times 16/25
+                        {
+                            \override Staff.NoteHead.no-ledgers = ##t\staff-line-count 3
+                            \override Staff.StaffSymbol.line-positions = #'(7 0 -7)
+                            \override Staff.Clef.stencil = #ly:text-interface::print
+                            \override Staff.Clef.text = \body-clef
+                            \override Staff.BarLine.bar-extent = #'(-3.5 . 3.5)\set Staff.forceClef = ##t
+                            \clef "treble"
+                            r4.
+                            \footnote #'(-2 . 1) \markup \fontsize #1 { \override #'(font-name . "Bodoni72 Book Italic") { \column { " firmly tap front of body with fingertips " } } }
+                            \tweak style #'cross
+                            g''16
+                            - \tweak circled-tip ##t
+                            \<
+                            \tweak style #'cross
+                            g''16
+                            \tweak style #'cross
+                            g''16
+                            \tweak style #'cross
+                            g''2
+                            - \accent
+                            \mf
+                            \tweak style #'cross
+                            g''2
+                            \tweak style #'cross
+                            g''4.
+                            \p
+                            - \tweak stencil #abjad-flared-hairpin
+                            \<
+                            \tweak style #'cross
+                            g''4
+                            \tweak style #'cross
+                            g''4
+                            \f
+                            - \tweak circled-tip ##t
+                            \>
+                            \tweak style #'cross
+                            g''4
+                            \tweak style #'cross
+                            g''16
+                            \tweak style #'cross
+                            g''16
+                            \tweak style #'cross
+                            g''2
+                            \!
+                            ~
+                            \once \override Accidental.stencil = ##f
+                            \once \override NoteHead.no-ledgers = ##t
+                            \once \override NoteHead.transparent = ##t
+                            g''8
+                            \tweak style #'cross
+                            g''16
+                            \mp
+                            \tweak style #'cross
+                            g''4.
+                            - \accent
+                            \tweak style #'cross
+                            g''16
+                            \tweak style #'cross
+                            g''4
+                            - \accent
+                            \mf
+                            \tweak style #'cross
+                            g''16
+                            \mp
+                            \tweak style #'cross
+                            g''16
+                            - \accent
+                            \tweak style #'cross
+                            f''16
+                            \tweak style #'cross
+                            e''16
+                            \tweak style #'cross
+                            d''16
+                            \tweak style #'cross
+                            c''16
+                            \tweak style #'cross
+                            b'16
+                            \tweak style #'cross
+                            a'16
+                            \breathe
+                        }
+                        \times 8/9
+                        {
+                            \override Dots.staff-position = #2
+                            \footnote #'(-2 . 1) \markup \fontsize #1 { \override #'(font-name . "Bodoni72 Book Italic") { \column { " lightly trace circles on the body with wooden piece " } } }
+                            g''4.
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.1
+                                        #:dynamic "pp"
+                                        #:hspace -0.25
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
+                            ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #-3 \box \line { w/ wooden piece }
+                            - \abjad-zero-padding-glissando
+                            \glissando
+                            - \tweak stencil #constante-hairpin
+                            \<
+                            d''8.
+                            - \abjad-zero-padding-glissando
+                            \glissando
+                            \<
+                            f''16
+                            - \abjad-zero-padding-glissando
+                            \glissando
+                            d''8
+                            - \abjad-zero-padding-glissando
+                            \glissando
+                            \<
+                            \afterGrace
+                            e''4.
+                            - \abjad-zero-padding-glissando
+                            \glissando
+                            - \tweak stencil #constante-hairpin
+                            \<
+                            {
+                                \once \override Stem.stencil = ##f
+                                \once \override Flag.stencil = ##f
+                                \once \override NoteHead.no-ledgers = ##t
+                                \once \override Accidental.stencil = ##f
+                                \revert Dots.staff-position
+                                \once \override NoteHead.transparent = ##t
+                                b'16
+                                \!
+                            }
+                        }
                           %! +SCORE
                         \once \override Staff.BarLine.transparent = ##f
                         \once \override MultiMeasureRest.transparent = ##t
                         \once \override Rest.transparent = ##t
                         \once \revert Staff.StaffSymbol.line-positions
+                        \once \override Staff.Clef.stencil = ##f
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                           %! +SCORE
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
