@@ -270,6 +270,10 @@ trinton.make_music(
     trinton.change_notehead_command(
         notehead="harmonic", selector=trinton.logical_ties(first=True, grace=False)
     ),
+    library.accidentals(
+        selector=trinton.select_logical_ties_by_index([0], pitched=True, grace=False),
+        accidental_strings=["VI"],
+    ),
     voice=score["viola 2 voice"],
 )
 

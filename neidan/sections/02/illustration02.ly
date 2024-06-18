@@ -432,8 +432,10 @@
                         \revert Dots.staff-position
                         b'16
                         r32
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup \fontsize #-3 \lower #0.6 { VI }
                         \tweak style #'harmonic
-                        g''32.
+                        g''!32.
                         - \abjad-zero-padding-glissando
                         \glissando
                         _ (
