@@ -37,7 +37,7 @@ def neidan_score(time_signatures):
 # notation tools
 
 
-def accidentals(selector, accidental_strings, site="before", horizontal_arrow=False):
+def accidentals(selector, accidental_strings, site="before", arrows=False):
     def make_accidentals(argument):
         selections = selector(argument)
         ties = abjad.select.logical_ties(selections)
@@ -46,10 +46,24 @@ def accidentals(selector, accidental_strings, site="before", horizontal_arrow=Fa
                 string_I = accidental[0]
                 string_II = accidental[-1]
 
-                accidental_markup = rf"""\markup \fontsize #-3 \raise #0.4 {{ \center-column {{ \line {{ {string_I} }} \line {{ {string_II} }} }} }}"""
+                accidental_markup = rf"""\markup
+                    \fontsize #-3
+                    \raise #0.4
+                    {{
+                        \center-column {{
+                            \line {{
+                                {string_I}
+                            }}
+                            \line {{
+                                {string_II}
+                            }}
+                        }}
+                    }}"""
 
             else:
-                accidental_markup = rf"""\markup  \fontsize #1 {{ {accidental} }}"""
+                accidental_markup = (
+                    rf"""\markup \fontsize #-3 \lower #0.6 {{ {accidental} }}"""
+                )
 
             first_leaf = abjad.select.leaf(tie, 0)
             first_leaf.note_head.is_forced = True
@@ -308,7 +322,7 @@ def change_staff(clef_name, selector=trinton.select_leaves_by_index([0], pitched
                     r"\staff-line-count 5",
                     r"\revert Staff.StaffSymbol.line-positions",
                     r"\revert Staff.Clef.stencil",
-                    r"\revert Staff.BarLine.bar-extent",
+                    r"\override Staff.BarLine.bar-extent = #'(-2 . 2)",
                     r"\set Staff.forceClef = ##t",
                 ],
                 site="before",
@@ -322,19 +336,75 @@ def change_staff(clef_name, selector=trinton.select_leaves_by_index([0], pitched
 
 # markups
 
+movements = [
+    abjad.Markup(
+        r"""\markup \override #'(font-name . "Source Han Serif SC Bold") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #4 \box \line { II. 地氣 }""",
+    ),
+    abjad.Markup(
+        r"""\markup \override #'(font-name . "Source Han Serif SC Bold") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #4 \box \line { III. 人神 }""",
+    ),
+]
 
-def fermata_measure_spanner(fermata, measure, voice):
+
+def return_movement_markup(movement, padding=14):
+    return abjad.bundle(
+        movements[movement], abjad.Tweak(rf"- \tweak padding #{padding}")
+    )
+
+
+def fermata_measure_spanner(fermata, measure, voice, repeat=None):
+    attachment_list = [
+        abjad.LilyPondLiteral(r"\stopMeasureSpanner", site="absolute_after")
+    ]
+    if repeat is not None:
+        _fermata_name_to_character = {
+            "extremely-short-fermata": "##xf69E",
+            "very-short-fermata": "##xe4C2",
+            "short-fermata": "##xe4C4",
+            "middle-fermata": "##xe4C0",
+            "long-fermata": "##xe4C6",
+            "very-long-fermata": "##xe4C8",
+            "extremely-long-fermata": "##xf6A0",
+        }
+
+        repetition_markup = rf"""\markup {{
+            \raise #2.5
+            \center-column {{
+                \line {{
+                    \override #'(font-name . "ekmelos")
+                    \char {_fermata_name_to_character[fermata]}
+                }}
+                \line {{
+                    \override #'(font-name . "Bodoni72 Book")
+                    \override #'(font-size . 4)
+                    ×{repeat}
+                }}
+            }}
+        }}"""
+
+        literal_string = f"\\tweak text {repetition_markup} \startMeasureSpanner"
+        literal = abjad.LilyPondLiteral(literal_string, site="absolute_before")
+        first_barline = abjad.BarLine(".|:", site="before")
+        second_barline = abjad.BarLine(":|.", site="after")
+
+        attachment_list.append(first_barline)
+        attachment_list.append(literal)
+        attachment_list.append(second_barline)
+
+    else:
+        literal_string = f"\\tweak text \{fermata} \startMeasureSpanner"
+        literal = abjad.LilyPondLiteral(literal_string, site="absolute_before")
+        attachment_list.append(literal)
+
     trinton.make_music(
         lambda _: trinton.select_target(_, (measure,)),
-        trinton.linear_attachment_command(
-            attachments=[
-                abjad.LilyPondLiteral(
-                    f"\\tweak text \{fermata} \startMeasureSpanner",
-                    site="absolute_before",
-                ),
-                abjad.LilyPondLiteral(r"\stopMeasureSpanner", site="absolute_after"),
-            ],
-            selector=trinton.select_leaves_by_index([0, -1]),
+        trinton.attachment_command(
+            attachments=attachment_list,
+            selector=trinton.select_leaves_by_index(
+                [
+                    0,
+                ]
+            ),
         ),
         voice=voice,
     )

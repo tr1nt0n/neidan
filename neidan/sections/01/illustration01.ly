@@ -918,7 +918,19 @@
                             \once \override Tie.stencil = ##f
                             \once \override NoteHead.duration-log = 2
                             \once \override Staff.Accidental.stencil = #ly:text-interface::print
-                            \once \override Staff.Accidental.text = \markup \fontsize #-3 \raise #0.4 { \center-column { \line { III } \line { IV } } }
+                            \once \override Staff.Accidental.text = \markup
+                                                \fontsize #-3
+                                                \raise #0.4
+                                                {
+                                                    \center-column {
+                                                        \line {
+                                                            III
+                                                        }
+                                                        \line {
+                                                            IV
+                                                        }
+                                                    }
+                                                }
                             f''!8.
                             \<
                             \once \override RepeatTie.transparent = ##t
@@ -1048,7 +1060,19 @@
                         \times 2/3
                         {
                             \once \override Staff.Accidental.stencil = #ly:text-interface::print
-                            \once \override Staff.Accidental.text = \markup \fontsize #-3 \raise #0.4 { \center-column { \line { III } \line { IV } } }
+                            \once \override Staff.Accidental.text = \markup
+                                                \fontsize #-3
+                                                \raise #0.4
+                                                {
+                                                    \center-column {
+                                                        \line {
+                                                            III
+                                                        }
+                                                        \line {
+                                                            IV
+                                                        }
+                                                    }
+                                                }
                             \once \revert Staff.Stem.stencil
                             \once \override Staff.Stem.details.lengths = #'(7.5)
                             \once \override Staff.Stem.Y-extent = ##f
@@ -1189,7 +1213,19 @@
                         \times 4/5
                         {
                             \once \override Staff.Accidental.stencil = #ly:text-interface::print
-                            \once \override Staff.Accidental.text = \markup \fontsize #-3 \raise #0.4 { \center-column { \line { III } \line { IV } } }
+                            \once \override Staff.Accidental.text = \markup
+                                                \fontsize #-3
+                                                \raise #0.4
+                                                {
+                                                    \center-column {
+                                                        \line {
+                                                            III
+                                                        }
+                                                        \line {
+                                                            IV
+                                                        }
+                                                    }
+                                                }
                             \once \revert Staff.Stem.stencil
                             \once \override Staff.Stem.details.lengths = #'(10.7)
                             \once \override Staff.Stem.Y-extent = ##f
@@ -1589,7 +1625,19 @@
                         {
                             \override Dots.staff-position = #2
                             \once \override Staff.Accidental.stencil = #ly:text-interface::print
-                            \once \override Staff.Accidental.text = \markup \fontsize #-3 \raise #0.4 { \center-column { \line { III } \line { IV } } }
+                            \once \override Staff.Accidental.text = \markup
+                                                \fontsize #-3
+                                                \raise #0.4
+                                                {
+                                                    \center-column {
+                                                        \line {
+                                                            III
+                                                        }
+                                                        \line {
+                                                            IV
+                                                        }
+                                                    }
+                                                }
                             \set Staff.forceClef = ##t
                             \clef "treble"
                             b!2
@@ -1675,9 +1723,33 @@
                         \times 2/3
                         {
                             \once \override Staff.Accidental.stencil = #ly:text-interface::print
-                            \once \override Staff.Accidental.text = \markup \fontsize #-3 \raise #0.4 { \center-column { \line { III } \line { IV } } }
+                            \once \override Staff.Accidental.text = \markup
+                                                \fontsize #-3
+                                                \raise #0.4
+                                                {
+                                                    \center-column {
+                                                        \line {
+                                                            III
+                                                        }
+                                                        \line {
+                                                            IV
+                                                        }
+                                                    }
+                                                }
                             \once \override Staff.Accidental.stencil = #ly:text-interface::print
-                            \once \override Staff.Accidental.text = \markup \fontsize #-3 \raise #0.4 { \center-column { \line { III } \line { IV } } }
+                            \once \override Staff.Accidental.text = \markup
+                                                \fontsize #-3
+                                                \raise #0.4
+                                                {
+                                                    \center-column {
+                                                        \line {
+                                                            III
+                                                        }
+                                                        \line {
+                                                            IV
+                                                        }
+                                                    }
+                                                }
                             \set Staff.forceClef = ##t
                             \set Staff.forceClef = ##t
                             \clef "treble"
@@ -1727,7 +1799,19 @@
                             e''16.
                             \footnote #'(0.5 . 1) \markup \fontsize #1 { \override #'(font-name . "Bodoni72 Book Italic") { \column { " strike open strings with bow, let ring shortly, then stop strings with left hand " } } }
                             \once \override Staff.Accidental.stencil = #ly:text-interface::print
-                            \once \override Staff.Accidental.text = \markup \fontsize #-3 \raise #0.4 { \center-column { \line { III } \line { IV } } }
+                            \once \override Staff.Accidental.text = \markup
+                                                \fontsize #-3
+                                                \raise #0.4
+                                                {
+                                                    \center-column {
+                                                        \line {
+                                                            III
+                                                        }
+                                                        \line {
+                                                            IV
+                                                        }
+                                                    }
+                                                }
                             \tweak style #'harmonic
                             g''!16.
                             r16
