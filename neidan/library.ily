@@ -91,7 +91,7 @@ string-clef = \markup {
     \override #'(whiteout . 1)
     \override #'(layer . 27)
     {
-        % \rotate #-45
+        \rotate #-180
         \raise #1
         \char ##xe078
     }

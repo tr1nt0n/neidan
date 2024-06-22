@@ -140,9 +140,9 @@
                     \context Voice = "viola 1 voice"
                     {
                         \override Dots.staff-position = #2
-                        \clef "treble"
+                        \clef "alto"
                         \afterGrace
-                        d'4
+                        d4
                         _ #(make-dynamic-script
                             (markup
                                 #:whiteout
@@ -181,17 +181,7 @@
                         \<
                         {
                             \once \override Flag.stroke-style = #"grace"
-                            d'16
-                            - \abjad-zero-padding-glissando
-                            \glissando
-                        }
-                        \afterGrace
-                        d''4
-                        - \abjad-zero-padding-glissando
-                        \glissando
-                        {
-                            \once \override Flag.stroke-style = #"grace"
-                            d''16
+                            d16
                             - \abjad-zero-padding-glissando
                             \glissando
                         }
@@ -205,8 +195,18 @@
                             - \abjad-zero-padding-glissando
                             \glissando
                         }
+                        \afterGrace
+                        d4
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        {
+                            \once \override Flag.stroke-style = #"grace"
+                            d16
+                            - \abjad-zero-padding-glissando
+                            \glissando
+                        }
                         \revert Dots.staff-position
-                        d''8
+                        d'8
                         \!
                         \stopTextSpan
                         \stopTextSpanOne
@@ -469,13 +469,13 @@
                         \once \override Tie.stencil = ##f
                         \once \override NoteHead.duration-log = 2
                         \override Staff.NoteHead.no-ledgers = ##t\staff-line-count 5
-                        \override Staff.StaffSymbol.line-positions = #'(7 6 4 0 -7)
+                        \override Staff.StaffSymbol.line-positions = #'(7 0 -4 -6 -7)
                         \override Staff.Clef.stencil = #ly:text-interface::print
                         \override Staff.Clef.text = \string-clef
                         \override Staff.BarLine.bar-extent = #'(-3.5 . 3.5)\set Staff.forceClef = ##t
                         \clef "treble"
                         \afterGrace
-                        a''4
+                        c'4
                         _ #(make-dynamic-script
                             (markup
                                 #:whiteout
@@ -506,7 +506,7 @@
                             \once \override Accidental.stencil = ##f
                             \revert Dots.staff-position
                             \once \override NoteHead.transparent = ##t
-                            a''16
+                            c'16
                             \!
                             \stopTextSpan
                         }
@@ -731,12 +731,12 @@
                         \once \override Tie.stencil = ##f
                         \once \override NoteHead.duration-log = 2
                         \override Staff.NoteHead.no-ledgers = ##t\staff-line-count 5
-                        \override Staff.StaffSymbol.line-positions = #'(7 6 4 0 -7)
+                        \override Staff.StaffSymbol.line-positions = #'(7 0 -4 -6 -7)
                         \override Staff.Clef.stencil = #ly:text-interface::print
                         \override Staff.Clef.text = \string-clef
                         \override Staff.BarLine.bar-extent = #'(-3.5 . 3.5)\set Staff.forceClef = ##t
                         \clef "treble"
-                        a''4
+                        c'4
                         _ #(make-dynamic-script
                             (markup
                                 #:whiteout
@@ -771,7 +771,7 @@
                           %! abjad.glissando(1)
                         \override NoteHead.no-ledgers = ##t
                         \afterGrace
-                        a''32
+                        c'32
                         {
                             \once \override RepeatTie.transparent = ##t
                             \once \override Stem.stencil = ##f
@@ -794,7 +794,7 @@
                             \revert NoteHead.no-ledgers
                               %! abjad.glissando(6)
                             \undo \hide NoteHead
-                            a''16
+                            c'16
                             \stopTextSpan
                         }
                         \once \override RepeatTie.transparent = ##t
@@ -805,7 +805,7 @@
                         \once \override Tie.stencil = ##f
                         \once \override NoteHead.duration-log = 2
                         \tweak style #'cross
-                        a''32
+                        c'32
                         - \tweak padding #6
                         - \abjad-dashed-line-with-hook
                         - \tweak bound-details.left.text \markup \concat { \hspace #-1.5 { "l. bat." } \hspace #0.5 }
@@ -819,7 +819,7 @@
                         \once \override Tie.stencil = ##f
                         \once \override NoteHead.duration-log = 2
                         \tweak style #'cross
-                        a''32
+                        c'32
                         - \accent
                         \stopTextSpan
                         \once \override RepeatTie.transparent = ##t
@@ -877,13 +877,13 @@
                             \once \override Tie.stencil = ##f
                             \once \override NoteHead.duration-log = 2
                             \override Staff.NoteHead.no-ledgers = ##t\staff-line-count 5
-                            \override Staff.StaffSymbol.line-positions = #'(7 6 4 0 -7)
+                            \override Staff.StaffSymbol.line-positions = #'(7 0 -4 -6 -7)
                             \override Staff.Clef.stencil = #ly:text-interface::print
                             \override Staff.Clef.text = \string-clef
                             \override Staff.BarLine.bar-extent = #'(-3.5 . 3.5)\set Staff.forceClef = ##t
                             \clef "treble"
                             \tweak style #'cross
-                            a''8.
+                            c'8.
                             \pp
                             - \tweak padding #6
                             - \abjad-dashed-line-with-hook
@@ -900,7 +900,7 @@
                             \once \override Tie.stencil = ##f
                             \once \override NoteHead.duration-log = 2
                             \tweak style #'cross
-                            a''8.
+                            c'8.
                             \once \override RepeatTie.transparent = ##t
                             \once \override Stem.stencil = ##f
                             \once \override Beam.stencil = ##f
@@ -909,7 +909,7 @@
                             \once \override Tie.stencil = ##f
                             \once \override NoteHead.duration-log = 2
                             \tweak style #'cross
-                            a''8.
+                            c'8.
                             \once \override RepeatTie.transparent = ##t
                             \once \override Stem.stencil = ##f
                             \once \override Beam.stencil = ##f
@@ -924,14 +924,14 @@
                                                 {
                                                     \center-column {
                                                         \line {
-                                                            III
+                                                            II -
                                                         }
                                                         \line {
-                                                            IV
+                                                            V
                                                         }
                                                     }
                                                 }
-                            f''!8.
+                            e'!8.
                             \<
                             \once \override RepeatTie.transparent = ##t
                             \once \override Stem.stencil = ##f
@@ -940,7 +940,7 @@
                             \once \override Dots.stencil = ##f
                             \once \override Tie.stencil = ##f
                             \once \override NoteHead.duration-log = 2
-                            d''8.
+                            g'8.
                             \once \revert Staff.Stem.stencil
                             \once \override Staff.Stem.details.lengths = #'(13.2)
                             \once \override Staff.Stem.Y-extent = ##f
@@ -958,7 +958,7 @@
                             \once \override Dots.stencil = ##f
                             \once \override Tie.stencil = ##f
                             \once \override NoteHead.duration-log = 2
-                            g'8.
+                            d''8.
                             \once \override RepeatTie.transparent = ##t
                             \once \override Stem.stencil = ##f
                             \once \override Beam.stencil = ##f
@@ -966,7 +966,7 @@
                             \once \override Dots.stencil = ##f
                             \once \override Tie.stencil = ##f
                             \once \override NoteHead.duration-log = 2
-                            e'8.
+                            g''8.
                             \once \override RepeatTie.transparent = ##t
                             \once \override Stem.stencil = ##f
                             \once \override Beam.stencil = ##f
@@ -974,7 +974,7 @@
                             \once \override Dots.stencil = ##f
                             \once \override Tie.stencil = ##f
                             \once \override NoteHead.duration-log = 2
-                            c'8.
+                            a''8.
                             \once \override RepeatTie.transparent = ##t
                             \once \override Stem.stencil = ##f
                             \once \override Beam.stencil = ##f
@@ -982,9 +982,9 @@
                             \once \override Dots.stencil = ##f
                             \once \override Tie.stencil = ##f
                             \once \override NoteHead.duration-log = 2
-                            b8.
+                            b''8.
                             \once \revert Staff.Stem.stencil
-                            \once \override Staff.Stem.details.lengths = #'(7)
+                            \once \override Staff.Stem.details.lengths = #'(19)
                             \once \override Staff.Stem.Y-extent = ##f
                             \once \override Staff.Stem.Y-offset = 0
                             \once \override Staff.Stem.layer = 0
@@ -992,7 +992,7 @@
                             \once \override Staff.Stem.thickness = #2
                             \once \override Flag.stencil = ##f
                             \once \override Dots.stencil = ##f
-                            b8.
+                            b''8.
                             \fff
                             \once \override RepeatTie.transparent = ##t
                             \once \override Stem.stencil = ##f
@@ -1001,7 +1001,7 @@
                             \once \override Dots.stencil = ##f
                             \once \override Tie.stencil = ##f
                             \once \override NoteHead.duration-log = 2
-                            b8.
+                            b''8.
                             \once \override RepeatTie.transparent = ##t
                             \once \override Stem.stencil = ##f
                             \once \override Beam.stencil = ##f
@@ -1009,7 +1009,7 @@
                             \once \override Dots.stencil = ##f
                             \once \override Tie.stencil = ##f
                             \once \override NoteHead.duration-log = 2
-                            b8.
+                            b''8.
                             \stopTextSpan
                         }
                         \once \override RepeatTie.transparent = ##t
@@ -1066,15 +1066,15 @@
                                                 {
                                                     \center-column {
                                                         \line {
-                                                            III
+                                                            II -
                                                         }
                                                         \line {
-                                                            IV
+                                                            V
                                                         }
                                                     }
                                                 }
                             \once \revert Staff.Stem.stencil
-                            \once \override Staff.Stem.details.lengths = #'(7.5)
+                            \once \override Staff.Stem.details.lengths = #'(19)
                             \once \override Staff.Stem.Y-extent = ##f
                             \once \override Staff.Stem.Y-offset = 0
                             \once \override Staff.Stem.layer = 0
@@ -1083,12 +1083,12 @@
                             \once \override Flag.stencil = ##f
                             \once \override Dots.stencil = ##f
                             \override Staff.NoteHead.no-ledgers = ##t\staff-line-count 5
-                            \override Staff.StaffSymbol.line-positions = #'(7 6 4 0 -7)
+                            \override Staff.StaffSymbol.line-positions = #'(7 0 -4 -6 -7)
                             \override Staff.Clef.stencil = #ly:text-interface::print
                             \override Staff.Clef.text = \string-clef
                             \override Staff.BarLine.bar-extent = #'(-3.5 . 3.5)\set Staff.forceClef = ##t
                             \clef "treble"
-                            b!8
+                            b''!8
                             \pp
                             - \tweak padding #6
                             - \abjad-dashed-line-with-hook
@@ -1102,11 +1102,11 @@
                             \once \override Dots.stencil = ##f
                             \once \override Tie.stencil = ##f
                             \once \override NoteHead.duration-log = 2
-                            c'8
+                            g''8
                             - \accent
                             \ff
                             \once \revert Staff.Stem.stencil
-                            \once \override Staff.Stem.details.lengths = #'(7)
+                            \once \override Staff.Stem.details.lengths = #'(19.5)
                             \once \override Staff.Stem.Y-extent = ##f
                             \once \override Staff.Stem.Y-offset = 0
                             \once \override Staff.Stem.layer = 0
@@ -1114,7 +1114,7 @@
                             \once \override Staff.Stem.thickness = #2
                             \once \override Flag.stencil = ##f
                             \once \override Dots.stencil = ##f
-                            b8
+                            b''8
                             \mp
                             \once \override RepeatTie.transparent = ##t
                             \once \override Stem.stencil = ##f
@@ -1123,11 +1123,11 @@
                             \once \override Dots.stencil = ##f
                             \once \override Tie.stencil = ##f
                             \once \override NoteHead.duration-log = 2
-                            d'8
+                            f''8
                             - \accent
                             \mf
                             \once \revert Staff.Stem.stencil
-                            \once \override Staff.Stem.details.lengths = #'(10)
+                            \once \override Staff.Stem.details.lengths = #'(16.5)
                             \once \override Staff.Stem.Y-extent = ##f
                             \once \override Staff.Stem.Y-offset = 0
                             \once \override Staff.Stem.layer = 0
@@ -1135,7 +1135,7 @@
                             \once \override Staff.Stem.thickness = #2
                             \once \override Flag.stencil = ##f
                             \once \override Dots.stencil = ##f
-                            b8
+                            b''8
                             \pp
                             \once \override RepeatTie.transparent = ##t
                             \once \override Stem.stencil = ##f
@@ -1144,7 +1144,7 @@
                             \once \override Dots.stencil = ##f
                             \once \override Tie.stencil = ##f
                             \once \override NoteHead.duration-log = 2
-                            e'8
+                            e''8
                             - \accent
                             \ff
                             \laissezVibrer
@@ -1219,15 +1219,15 @@
                                                 {
                                                     \center-column {
                                                         \line {
-                                                            III
+                                                            II -
                                                         }
                                                         \line {
-                                                            IV
+                                                            V
                                                         }
                                                     }
                                                 }
                             \once \revert Staff.Stem.stencil
-                            \once \override Staff.Stem.details.lengths = #'(10.7)
+                            \once \override Staff.Stem.details.lengths = #'(15.65)
                             \once \override Staff.Stem.Y-extent = ##f
                             \once \override Staff.Stem.Y-offset = 0
                             \once \override Staff.Stem.layer = 0
@@ -1236,7 +1236,7 @@
                             \once \override Flag.stencil = ##f
                             \once \override Dots.stencil = ##f
                             \override Staff.NoteHead.no-ledgers = ##t\staff-line-count 5
-                            \override Staff.StaffSymbol.line-positions = #'(7 6 4 0 -7)
+                            \override Staff.StaffSymbol.line-positions = #'(7 0 -4 -6 -7)
                             \override Staff.Clef.stencil = #ly:text-interface::print
                             \override Staff.Clef.text = \string-clef
                             \override Staff.BarLine.bar-extent = #'(-3.5 . 3.5)\set Staff.forceClef = ##t
@@ -1498,15 +1498,15 @@
                         \ff
                         r2.
                         r16.
-                        \footnote #'(-2 . 1) \markup \fontsize #1 { \override #'(font-name . "Bodoni72 Book Italic") { \column { " lightly tap side of bridge with wooden piece " } } }
+                        \footnote #'(0 . 3) \markup \fontsize #1 { \override #'(font-name . "Bodoni72 Book Italic") { \column { " lightly tap side of bridge with wooden piece " } } }
                         \override Staff.NoteHead.no-ledgers = ##t\staff-line-count 5
-                        \override Staff.StaffSymbol.line-positions = #'(7 6 4 0 -7)
+                        \override Staff.StaffSymbol.line-positions = #'(7 0 -4 -6 -7)
                         \override Staff.Clef.stencil = #ly:text-interface::print
                         \override Staff.Clef.text = \string-clef
                         \override Staff.BarLine.bar-extent = #'(-3.5 . 3.5)\set Staff.forceClef = ##t
                         \clef "treble"
                         \tweak style #'cross
-                        a''32
+                        c'32
                         _ #(make-dynamic-script
                             (markup
                                 #:whiteout
@@ -1553,7 +1553,7 @@
                         \footnote #'(-2 . 1) \markup \fontsize #1 { \override #'(font-name . "Bodoni72 Book Italic") { \column { " quasi-bow side of bridge with wooden piece " } } }
                         \override Dots.staff-position = #2
                         \afterGrace
-                        a''2...
+                        c'2...
                         _ #(make-dynamic-script
                             (markup
                                 #:whiteout
@@ -1582,11 +1582,11 @@
                             \once \override Accidental.stencil = ##f
                             \revert Dots.staff-position
                             \once \override NoteHead.transparent = ##t
-                            a''16
+                            c'16
                             \stopTextSpan
                         }
                         \tweak style #'cross
-                        a''32
+                        c'32
                         _ #(make-dynamic-script
                             (markup
                                 #:whiteout
@@ -1605,7 +1605,7 @@
                         - \tweak bound-details.right.padding -2
                         \startTextSpan
                         \tweak style #'cross
-                        a''32
+                        c'32
                         \stopTextSpan
                           %! +SCORE
                         \once \override Staff.BarLine.transparent = ##f
@@ -1618,6 +1618,7 @@
                           %! +SCORE
                         \once \override MultiMeasureRest.transparent = ##t
                         R1 * 1/2
+                        - \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #-3 \box \line { ( set wooden piece aside) }
                           %! +SCORE
                         \stopStaff \startStaff
                         \tweak text #tuplet-number::calc-fraction-text
@@ -1631,16 +1632,17 @@
                                                 {
                                                     \center-column {
                                                         \line {
-                                                            III
+                                                            II -
                                                         }
                                                         \line {
-                                                            IV
+                                                            V
                                                         }
                                                     }
                                                 }
                             \set Staff.forceClef = ##t
+                            \set Staff.forceClef = ##t
                             \clef "treble"
-                            b!2
+                            b''!2
                               %! abjad.glissando(7)
                             - \abjad-zero-padding-glissando
                               %! abjad.glissando(7)
@@ -1657,7 +1659,7 @@
                             \override NoteColumn.glissando-skip = ##t
                               %! abjad.glissando(1)
                             \override NoteHead.no-ledgers = ##t
-                            b8
+                            b''8
                             \big-half-harmonic
                               %! abjad.glissando(6)
                             \revert Accidental.stencil
@@ -1694,7 +1696,7 @@
                               %! abjad.glissando(6)
                             \undo \hide NoteHead
                             \afterGrace
-                            a''4.
+                            d'4.
                             - \abjad-zero-padding-glissando
                             \glissando
                             {
@@ -1704,7 +1706,7 @@
                                 \once \override Accidental.stencil = ##f
                                 \revert Dots.staff-position
                                 \once \override NoteHead.transparent = ##t
-                                a''16
+                                d'16
                             }
                         }
                           %! +SCORE
@@ -1729,34 +1731,19 @@
                                                 {
                                                     \center-column {
                                                         \line {
-                                                            III
+                                                            II -
                                                         }
                                                         \line {
-                                                            IV
+                                                            V
                                                         }
                                                     }
                                                 }
-                            \once \override Staff.Accidental.stencil = #ly:text-interface::print
-                            \once \override Staff.Accidental.text = \markup
-                                                \fontsize #-3
-                                                \raise #0.4
-                                                {
-                                                    \center-column {
-                                                        \line {
-                                                            III
-                                                        }
-                                                        \line {
-                                                            IV
-                                                        }
-                                                    }
-                                                }
-                            \set Staff.forceClef = ##t
                             \set Staff.forceClef = ##t
                             \clef "treble"
                             \tweak style #'harmonic
-                            g''!4
+                            d'!4
                             \tweak style #'harmonic
-                            a''4
+                            c'4
                             \tweak style #'harmonic
                             b'4
                         }
@@ -1796,7 +1783,7 @@
                             \once \override NoteHead.text = \markup \fontsize #4 \override #'(font-name . "ekmelos") { \char ##xec64 }
                             \set Staff.forceClef = ##t
                             \clef "treble"
-                            e''16.
+                            b16.
                             \footnote #'(0.5 . 1) \markup \fontsize #1 { \override #'(font-name . "Bodoni72 Book Italic") { \column { " strike open strings with bow, let ring shortly, then stop strings with left hand " } } }
                             \once \override Staff.Accidental.stencil = #ly:text-interface::print
                             \once \override Staff.Accidental.text = \markup
@@ -1805,19 +1792,19 @@
                                                 {
                                                     \center-column {
                                                         \line {
-                                                            III
+                                                            II -
                                                         }
                                                         \line {
-                                                            IV
+                                                            V
                                                         }
                                                     }
                                                 }
                             \tweak style #'harmonic
-                            g''!16.
+                            d'!16.
                             r16
                             \footnote #'(-1 . 1) \markup \fontsize #1 { \override #'(font-name . "Bodoni72 Book Italic") { \column { " tap front of bridge with fingertips " } } }
                             \tweak style #'cross
-                            a''32
+                            c'32
                             _ #(make-dynamic-script
                                 (markup
                                     #:whiteout
@@ -1831,7 +1818,7 @@
                                     )
                                 )
                             \tweak style #'cross
-                            a''32
+                            c'32
                             - \accent
                         }
                         \times 16/25

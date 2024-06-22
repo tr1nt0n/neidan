@@ -150,9 +150,9 @@
                         \revert Staff.Clef.stencil
                         \override Staff.BarLine.bar-extent = #'(-2 . 2)
                         \set Staff.forceClef = ##t
-                        \clef "treble"
+                        \clef "alto"
                         \afterGrace
-                        a2
+                        a,2
                         _ #(make-dynamic-script
                             (markup
                                 #:whiteout
@@ -191,12 +191,12 @@
                         \<
                         {
                             \once \override Flag.stroke-style = #"grace"
-                            a16
+                            a,16
                             - \abjad-zero-padding-glissando
                             \glissando
                         }
                         \revert Dots.staff-position
-                        a'8
+                        a8
                         \!
                         \stopTextSpan
                         \stopTextSpanOne
@@ -212,15 +212,15 @@
                         \once \override Staff.Accidental.stencil = #ly:text-interface::print
                         \once \override Staff.Accidental.text = \markup \fontsize #-3 \lower #0.6 { II }
                         \override Staff.NoteHead.no-ledgers = ##t\staff-line-count 5
-                        \override Staff.StaffSymbol.line-positions = #'(7 6 4 0 -7)
+                        \override Staff.StaffSymbol.line-positions = #'(7 0 -4 -6 -7)
                         \override Staff.Clef.stencil = #ly:text-interface::print
                         \override Staff.Clef.text = \string-clef
                         \override Staff.BarLine.bar-extent = #'(-3.5 . 3.5)\set Staff.forceClef = ##t
                         \clef "treble"
                         \tweak style #'cross
-                        a''!8.
+                        c'!8.
                         \p
-                        - \tweak padding #6
+                        - \tweak padding #5
                         - \abjad-dashed-line-with-hook
                         - \tweak bound-details.left.text \markup \concat { \upright { "legno bat." } \hspace #0.5 }
                         - \tweak bound-details.right.padding -4
@@ -234,7 +234,7 @@
                         \once \override Tie.stencil = ##f
                         \once \override NoteHead.duration-log = 2
                         \tweak style #'cross
-                        a''16
+                        c'16
                         \once \override RepeatTie.transparent = ##t
                         \once \override Stem.stencil = ##f
                         \once \override Beam.stencil = ##f
@@ -243,7 +243,7 @@
                         \once \override Tie.stencil = ##f
                         \once \override NoteHead.duration-log = 2
                         \tweak style #'cross
-                        g''8
+                        d'8
                         - \accent
                         \mp
                         \once \override RepeatTie.transparent = ##t
@@ -254,7 +254,7 @@
                         \once \override Tie.stencil = ##f
                         \once \override NoteHead.duration-log = 2
                         \tweak style #'cross
-                        a''8
+                        c'8
                         \pp
                         \stopTextSpan
                         \once \override RepeatTie.transparent = ##t
@@ -300,7 +300,7 @@
                         - \tweak Y-offset -1
                         ^ \upbow
                         \once \revert Staff.Stem.stencil
-                        \once \override Staff.Stem.details.lengths = #'(8.8)
+                        \once \override Staff.Stem.details.lengths = #'(13.75)
                         \once \override Staff.Stem.Y-extent = ##f
                         \once \override Staff.Stem.Y-offset = 0
                         \once \override Staff.Stem.layer = 0
@@ -315,7 +315,7 @@
                         - \abjad-zero-padding-glissando
                         \glissando
                         \once \revert Staff.Stem.stencil
-                        \once \override Staff.Stem.details.lengths = #'(9.2)
+                        \once \override Staff.Stem.details.lengths = #'(13.25)
                         \once \override Staff.Stem.Y-extent = ##f
                         \once \override Staff.Stem.Y-offset = 0
                         \once \override Staff.Stem.layer = 0
@@ -353,9 +353,52 @@
                         \!
                         _ \accent
                         \stopTextSpan
-                        \once \revert Staff.StaffSymbol.line-positions
-                        \once \override Staff.Clef.stencil = ##f
-                        s1 * 1
+                        \override Dots.staff-position = #2
+                        \once \override RepeatTie.transparent = ##t
+                        \once \override Stem.stencil = ##f
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \afterGrace
+                        b1
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.4
+                                    #:dynamic "fff"
+                                    #:hspace -0.2
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        - \tweak padding #5.5
+                        - \abjad-dashed-line-with-hook
+                        - \tweak bound-details.left.text \markup \concat { \upright { "extremely slow bow" } \hspace #0.5 }
+                        - \tweak bound-details.right.padding -1
+                        \startTextSpan
+                        {
+                            \once \override RepeatTie.transparent = ##t
+                            \once \override Stem.stencil = ##f
+                            \once \override Beam.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override Dots.stencil = ##f
+                            \once \override Tie.stencil = ##f
+                            \once \override NoteHead.duration-log = 2
+                            \once \override Stem.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override NoteHead.no-ledgers = ##t
+                            \once \override Accidental.stencil = ##f
+                            \revert Dots.staff-position
+                            \once \override NoteHead.transparent = ##t
+                            b16
+                            \stopTextSpan
+                        }
                           %! +SCORE
                         \once \override MultiMeasureRest.transparent = ##t
                           %! +SCORE
@@ -420,12 +463,12 @@
                         \once \override Staff.Accidental.stencil = #ly:text-interface::print
                         \once \override Staff.Accidental.text = \markup \fontsize #-3 \lower #0.6 { II }
                         \override Staff.NoteHead.no-ledgers = ##t\staff-line-count 5
-                        \override Staff.StaffSymbol.line-positions = #'(7 6 4 0 -7)
+                        \override Staff.StaffSymbol.line-positions = #'(7 0 -4 -6 -7)
                         \override Staff.Clef.stencil = #ly:text-interface::print
                         \override Staff.Clef.text = \string-clef
                         \override Staff.BarLine.bar-extent = #'(-3.5 . 3.5)\set Staff.forceClef = ##t
                         \clef "treble"
-                        e'!4..
+                        f''!4..
                         - \abjad-zero-padding-glissando
                         \glissando
                         \big-half-harmonic
@@ -435,35 +478,110 @@
                         \once \override Staff.Accidental.stencil = #ly:text-interface::print
                         \once \override Staff.Accidental.text = \markup \fontsize #-3 \lower #0.6 { VI }
                         \tweak style #'harmonic
-                        g''!32.
+                        d'!32.
                         - \abjad-zero-padding-glissando
                         \glissando
                         _ (
                         \tweak style #'harmonic
-                        a''64
+                        c'64
                         )
                         \tweak style #'harmonic
-                        f''32.
+                        e'32.
                         - \abjad-zero-padding-glissando
                         \glissando
                         _ (
                         \tweak style #'harmonic
-                        a''64
+                        c'64
                         )
                         r32
-                          %! +SCORE
-                        \once \override Staff.BarLine.transparent = ##f
-                        \once \revert Staff.StaffSymbol.line-positions
-                        \once \override Staff.Clef.stencil = ##f
-                          %! +SCORE
-                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                          %! +SCORE
-                        \once \override Staff.TimeSignature.transparent = ##t
-                          %! +SCORE
-                        \once \override MultiMeasureRest.transparent = ##t
-                        R1 * 1
-                          %! +SCORE
-                        \stopStaff \startStaff
+                        r4
+                        \times 4/7
+                        {
+                            \override Dots.staff-position = #2
+                            \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                            \once \override Staff.Accidental.text = \markup
+                                                \fontsize #-3
+                                                \raise #0.4
+                                                {
+                                                    \center-column {
+                                                        \line {
+                                                            I -
+                                                        }
+                                                        \line {
+                                                            VII
+                                                        }
+                                                    }
+                                                }
+                            g''!8.
+                              %! abjad.glissando(7)
+                            - \abjad-zero-padding-glissando
+                              %! abjad.glissando(7)
+                            \glissando
+                            - \tweak circled-tip ##t
+                            - \tweak stencil #abjad-flared-hairpin
+                            \<
+                            - \tweak padding #6.5
+                            - \abjad-dashed-line-with-hook
+                            - \tweak bound-details.left.text \markup \concat { \upright { "finger percussion" } \hspace #0.5 }
+                            \startTextSpanOne
+                            ~
+                            - \tweak details.squiggle-Y-scale 0.9
+                            - \tweak details.squiggle-initial-width 5
+                            - \tweak details.squiggle-speed-factor 0.7
+                            - \tweak thickness 3
+                            \slow-fast-trill
+                              %! abjad.glissando(1)
+                            \hide NoteHead
+                              %! abjad.glissando(1)
+                            \override Accidental.stencil = ##f
+                              %! abjad.glissando(1)
+                            \override NoteColumn.glissando-skip = ##t
+                              %! abjad.glissando(1)
+                            \override NoteHead.no-ledgers = ##t
+                            g''8.
+                            - \tweak stencil #abjad-flared-hairpin
+                            \>
+                            ~
+                            g''8.
+                            - \tweak stencil #abjad-flared-hairpin
+                            \<
+                            ~
+                            g''8.
+                            - \tweak stencil #abjad-flared-hairpin
+                            \>
+                            ~
+                            g''8.
+                            - \tweak stencil #abjad-flared-hairpin
+                            \<
+                            ~
+                            g''8.
+                            \<
+                            ~
+                            \afterGrace
+                            g''8.
+                            - \tweak circled-tip ##t
+                            \>
+                            {
+                                \once \override Stem.stencil = ##f
+                                \once \override Flag.stencil = ##f
+                                \once \override NoteHead.no-ledgers = ##t
+                                \once \override Accidental.stencil = ##f
+                                \revert Dots.staff-position
+                                \once \override NoteHead.transparent = ##t
+                                  %! abjad.glissando(6)
+                                \revert Accidental.stencil
+                                  %! abjad.glissando(6)
+                                \revert NoteColumn.glissando-skip
+                                  %! abjad.glissando(6)
+                                \revert NoteHead.no-ledgers
+                                  %! abjad.glissando(6)
+                                \undo \hide NoteHead
+                                g''16
+                                \!
+                                \stopTextSpanOne
+                                \stopTrillSpan
+                            }
+                        }
                           %! +SCORE
                         \once \override Staff.BarLine.transparent = ##f
                         \once \override MultiMeasureRest.transparent = ##t

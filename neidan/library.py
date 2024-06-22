@@ -37,6 +37,39 @@ def neidan_score(time_signatures):
 # notation tools
 
 
+def varied_trills(
+    initial_width,
+    y_scale,
+    speed_factor,
+    thickness=3,
+    selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+):
+    def trills(argument):
+        if speed_factor > 0.9:
+            raise Exception("Speed factor must be a float value under 1.")
+        selections = selector(argument)
+
+        it = iter(selections)
+        tups = [*zip(it, it)]
+
+        start_trill = abjad.bundle(
+            abjad.LilyPondLiteral(r"\slow-fast-trill", site="after"),
+            rf"- \tweak details.squiggle-Y-scale {y_scale}",
+            rf"- \tweak details.squiggle-initial-width {initial_width}",
+            rf"- \tweak details.squiggle-speed-factor {speed_factor}",
+            rf"- \tweak thickness {thickness}",
+        )
+
+        stop_trill = abjad.StopTrillSpan()
+
+        for tup in tups:
+            abjad.attach(start_trill, tup[0])
+
+            abjad.attach(stop_trill, tup[-1])
+
+    return trills
+
+
 def accidentals(selector, accidental_strings, site="before", arrows=False):
     def make_accidentals(argument):
         selections = selector(argument)
@@ -280,8 +313,8 @@ def reset_line_positions(score, voice_names):
 _clef_name_to_info = {
     "body": (3, [7, 0, -7]),
     "back-of-body": (2, [7, -7]),
-    "string": (5, [7, 6, 4, 0, -7]),
-    "treble": (5, "revert"),
+    "string": (5, [7, 0, -4, -6, -7]),
+    "alto": (5, "revert"),
 }
 
 
@@ -290,7 +323,7 @@ def change_staff(clef_name, selector=trinton.select_leaves_by_index([0], pitched
         selections = selector(argument)
         first_leaf = abjad.select.leaf(selections, 0)
 
-        if clef_name != "treble":
+        if clef_name != "alto":
             clef = f"\{clef_name}-clef"
             clef_line_count = _clef_name_to_info[clef_name][0]
             clef_line_positions = _clef_name_to_info[clef_name][-1]
@@ -328,7 +361,7 @@ def change_staff(clef_name, selector=trinton.select_leaves_by_index([0], pitched
                 site="before",
             )
 
-            abjad.attach(abjad.Clef("treble"), first_leaf)
+            abjad.attach(abjad.Clef("alto"), first_leaf)
             abjad.attach(literal, first_leaf)
 
     return change

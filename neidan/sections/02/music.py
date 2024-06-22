@@ -29,14 +29,14 @@ score = library.neidan_score(
 trinton.make_music(
     lambda _: trinton.select_target(_, (1,)),
     evans.RhythmHandler(evans.talea([4, 1], 8)),
-    evans.PitchHandler(["a", "a'"]),
+    evans.PitchHandler(["a,", "a"]),
     trinton.aftergrace_command(
         selector=trinton.select_logical_ties_by_index([0], pitched=True),
         pitch_matching=True,
         slash=True,
     ),
     library.change_staff(
-        clef_name="treble", selector=trinton.select_leaves_by_index([0])
+        clef_name="alto", selector=trinton.select_leaves_by_index([0])
     ),
     trinton.continuous_glissando(zero_padding=True),
     trinton.linear_attachment_command(
@@ -105,7 +105,7 @@ trinton.make_music(
 trinton.make_music(
     lambda _: trinton.select_target(_, (2,)),
     evans.RhythmHandler(evans.talea([3, 1, 2, 2], 16)),
-    evans.PitchHandler(["a''", "a''", "g''", "a''"]),
+    evans.PitchHandler(["c'", "c'", "d'", "c'"]),
     library.change_staff(
         clef_name="string", selector=trinton.select_leaves_by_index([0])
     ),
@@ -133,7 +133,7 @@ trinton.make_music(
     trinton.hooked_spanner_command(
         string="legno bat.",
         selector=trinton.select_leaves_by_index([0, -1], pitched=True),
-        padding=6,
+        padding=5,
         direction=None,
         right_padding=4,
         full_string=False,
@@ -218,8 +218,35 @@ trinton.make_music(
         selector=trinton.select_logical_ties_by_index(
             [2, 3], pitched=True, grace=False
         ),
-        heights=[8.8, 9.2],
+        heights=[13.75, 13.25],
         site="before",
+    ),
+    voice=score["viola 1 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (4,)),
+    evans.RhythmHandler(evans.talea([100], 4)),
+    trinton.aftergrace_command(invisible=True),
+    evans.PitchHandler(["b"]),
+    trinton.continuous_glissando(zero_padding=True),
+    trinton.noteheads_only(),
+    trinton.attachment_command(
+        attachments=[abjad.Dynamic('"fff"')],
+        selector=trinton.select_leaves_by_index([0]),
+    ),
+    trinton.hooked_spanner_command(
+        string="extremely slow bow",
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+        padding=5.5,
+        direction=None,
+        right_padding=1,
+        full_string=False,
+        style="dashed-line-with-hook",
+        hspace=None,
+        command="",
+        tag=None,
+        # tweaks=[r"- \tweak font-size 1"],
     ),
     voice=score["viola 1 voice"],
 )
@@ -229,7 +256,7 @@ trinton.make_music(
 trinton.make_music(
     lambda _: trinton.select_target(_, (2,)),
     evans.RhythmHandler(evans.talea([7, 1], 16)),
-    evans.PitchHandler(["e'", "b'"]),
+    evans.PitchHandler(["f''", "b'"]),
     library.change_staff(
         clef_name="string", selector=trinton.select_leaves_by_index([0])
     ),
@@ -250,7 +277,7 @@ trinton.make_music(
     evans.RhythmHandler(
         evans.tuplet([(-2, 3, 1, 3, 1, -2)]),
     ),
-    evans.PitchHandler(["g''", "a''", "f''", "a''"]),
+    evans.PitchHandler(["d'", "c'", "e'", "c'"]),
     trinton.attachment_command(
         attachments=[abjad.Glissando(zero_padding=True)],
         selector=trinton.select_logical_ties_by_index(
@@ -275,6 +302,75 @@ trinton.make_music(
         accidental_strings=["VI"],
     ),
     voice=score["viola 2 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (4,)),
+    evans.RhythmHandler(
+        evans.tuplet(
+            [
+                (-1,),
+                (
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                ),
+            ]
+        )
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Tie()],
+        selector=trinton.logical_ties(
+            last=True, exclude=[-1], grace=False, pitched=True
+        ),
+    ),
+    trinton.aftergrace_command(
+        invisible=True,
+    ),
+    evans.PitchHandler(["g''"]),
+    trinton.continuous_glissando(zero_padding=True),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.StartHairpin("o<|"),
+            abjad.StartHairpin("|>"),
+            abjad.StartHairpin("<|"),
+            abjad.StartHairpin("|>"),
+            abjad.StartHairpin("<|"),
+            abjad.StartHairpin("<"),
+            abjad.StartHairpin(">o"),
+            abjad.StopHairpin(),
+        ],
+        selector=trinton.pleaves(),
+    ),
+    library.varied_trills(
+        initial_width=5,
+        y_scale=0.9,
+        speed_factor=0.7,
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+    ),
+    library.accidentals(
+        selector=trinton.select_logical_ties_by_index([0], pitched=True, grace=False),
+        accidental_strings=[("I -", "VII")],
+    ),
+    trinton.hooked_spanner_command(
+        string="finger percussion",
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+        padding=6.5,
+        direction=None,
+        right_padding=0,
+        full_string=False,
+        style="dashed-line-with-hook",
+        hspace=None,
+        command="One",
+        tag=None,
+        # tweaks=[r"- \tweak font-size 1"],
+    ),
+    voice=score["viola 2 voice"],
+    preprocessor=trinton.fuse_quarters_preprocessor((1, 3)),
 )
 
 # globals

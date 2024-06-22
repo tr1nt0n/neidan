@@ -37,15 +37,15 @@ trinton.make_music(
     evans.RhythmHandler(evans.talea([2, 2, 2, 1], 8)),
     evans.PitchHandler(
         [
+            "d",
             "d'",
-            "d''",
         ]
     ),
     trinton.aftergrace_command(
         selector=trinton.pleaves(exclude=[-1]), slash=True, pitch_matching=True
     ),
     trinton.attachment_command(
-        attachments=[abjad.Clef("treble")], selector=trinton.select_leaves_by_index([0])
+        attachments=[abjad.Clef("alto")], selector=trinton.select_leaves_by_index([0])
     ),
     trinton.linear_attachment_command(
         attachments=[
@@ -204,7 +204,7 @@ trinton.make_music(
 trinton.make_music(
     lambda _: trinton.select_target(_, (5,)),
     evans.RhythmHandler(evans.talea([5, 3, 1, 1, 1, 1, 4], 16)),
-    evans.PitchHandler(["b''", "a'", "a''", "c'", "g'", "e'", "a''"]),
+    evans.PitchHandler(["b''", "a'", "a''", "c'", "g'", "e'", "c'"]),
     trinton.aftergrace_command(
         selector=trinton.select_logical_ties_by_index([-1], pitched=True, grace=False),
         invisible=True,
@@ -319,7 +319,7 @@ trinton.make_music(
     lambda _: trinton.select_target(_, (8,)),
     evans.RhythmHandler(evans.talea([6, 1, 1, 1, 5, 2, 2, 2, 1, 9, 1, 1], 32)),
     evans.PitchHandler(
-        ["d'", "a'", "f'", "a'", "g'", "d''", "g'", "d''", "g'", "a''", "a''", "a''"]
+        ["d'", "a'", "f'", "a'", "g'", "d''", "g'", "d''", "g'", "c'", "c'", "c'"]
     ),
     trinton.aftergrace_command(
         selector=trinton.select_logical_ties_by_index([-3], pitched=True, grace=False),
@@ -507,7 +507,21 @@ trinton.make_music(
     lambda _: trinton.select_target(_, (10,)),
     evans.RhythmHandler(evans.tuplet([(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)])),
     evans.PitchHandler(
-        ["a''", "a''", "a''", "f''", "d''", "b'", "g'", "e'", "c'", "b", "b", "b", "b"]
+        [
+            "c'",
+            "c'",
+            "c'",
+            "e'",
+            "g'",
+            "b'",
+            "d''",
+            "g''",
+            "a''",
+            "b''",
+            "b''",
+            "b''",
+            "b''",
+        ]
     ),
     library.change_staff(
         clef_name="string", selector=trinton.select_leaves_by_index([0])
@@ -520,7 +534,7 @@ trinton.make_music(
         selector=trinton.select_logical_ties_by_index(
             [5, 10], pitched=True, grace=False
         ),
-        heights=[13.2, 7],
+        heights=[13.2, 19],
         site="before",
     ),
     trinton.invisible_tuplet_brackets(),
@@ -556,7 +570,7 @@ trinton.make_music(
     ),
     library.accidentals(
         selector=trinton.select_logical_ties_by_index([3], pitched=True, grace=False),
-        accidental_strings=[("III", "IV")],
+        accidental_strings=[("II -", "V")],
     ),
     voice=score["viola 1 voice"],
 )
@@ -695,7 +709,7 @@ trinton.make_music(
 trinton.make_music(
     lambda _: trinton.select_target(_, (12,)),
     evans.RhythmHandler(evans.tuplet([(1, 1, 1, 1, 1, 1)])),
-    evans.PitchHandler(["b", "c'", "b", "d'", "b", "e'"]),
+    evans.PitchHandler(["b''", "g''", "b''", "f''", "b''", "e''"]),
     trinton.detach_command(
         detachments=[abjad.StopTextSpan], selector=trinton.pleaves()
     ),
@@ -704,7 +718,7 @@ trinton.make_music(
         selector=trinton.select_logical_ties_by_index(
             [0, 2, 4], pitched=True, grace=False
         ),
-        heights=[7.5, 7, 10],
+        heights=[19, 19.5, 16.5],
         site="before",
     ),
     library.change_staff(
@@ -751,7 +765,7 @@ trinton.make_music(
     ),
     library.accidentals(
         selector=trinton.select_logical_ties_by_index([0], pitched=True, grace=False),
-        accidental_strings=[("III", "IV")],
+        accidental_strings=[("II -", "V")],
     ),
     voice=score["viola 1 voice"],
 )
@@ -893,7 +907,7 @@ trinton.make_music(
             pitched=True,
             grace=False,
         ),
-        heights=[10.7],
+        heights=[15.65],
         site="before",
     ),
     library.change_staff(
@@ -942,7 +956,7 @@ trinton.make_music(
     ),
     library.accidentals(
         selector=trinton.select_logical_ties_by_index([0], pitched=True, grace=False),
-        accidental_strings=[("III", "IV")],
+        accidental_strings=[("II -", "V")],
     ),
     trinton.linear_attachment_command(
         attachments=[
@@ -1067,7 +1081,7 @@ trinton.make_music(
 trinton.make_music(
     lambda _: trinton.select_target(_, (5,)),
     evans.RhythmHandler(evans.talea([1, 1, 1, 1, -27, 1], 32)),
-    evans.PitchHandler(["f''", "f''", "f''", "f''", "a''"]),
+    evans.PitchHandler(["f''", "f''", "f''", "f''", "c'"]),
     trinton.change_notehead_command(notehead="cross"),
     library.change_staff(
         clef_name="string", selector=trinton.select_leaves_by_index([-1], pitched=True)
@@ -1103,8 +1117,8 @@ trinton.make_music(
     library.footnote_command(
         text_string="lightly tap side of bridge with wooden piece",
         selector=trinton.select_leaves_by_index([-1]),
-        # position_pair=(-1, 3),
-        # site="before",
+        position_pair=(0, 3),
+        site="before",
     ),
     voice=score["viola 2 voice"],
 )
@@ -1112,7 +1126,7 @@ trinton.make_music(
 trinton.make_music(
     lambda _: trinton.select_target(_, (8,)),
     evans.RhythmHandler(evans.talea([30, 1, 1], 32)),
-    evans.PitchHandler(["a''"]),
+    evans.PitchHandler(["c'"]),
     trinton.change_notehead_command(
         selector=trinton.select_leaves_by_index([-2, -1]), notehead="cross"
     ),
@@ -1175,9 +1189,28 @@ trinton.make_music(
 )
 
 trinton.make_music(
+    lambda _: trinton.select_target(_, (9,)),
+    trinton.attachment_command(
+        attachments=[
+            trinton.boxed_markup(
+                string="( set wooden piece aside)",
+                tweaks=None,
+                column="\center-column",
+                font_name="Bodoni72 Book",
+                fontsize=-3,
+                string_only=False,
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        direction=abjad.UP,
+    ),
+    voice=score["viola 2 voice"],
+)
+
+trinton.make_music(
     lambda _: trinton.select_target(_, (10,)),
     evans.RhythmHandler(evans.tuplet([(5, 5, 3)])),
-    evans.PitchHandler(["b", "b'", "a''"]),
+    evans.PitchHandler(["b''", "b'", "d'"]),
     trinton.aftergrace_command(
         selector=trinton.select_logical_ties_by_index([-1], pitched=True, grace=False),
         invisible=True,
@@ -1191,7 +1224,14 @@ trinton.make_music(
     trinton.continuous_glissando(zero_padding=True),
     library.accidentals(
         selector=trinton.select_logical_ties_by_index([0], pitched=True, grace=False),
-        accidental_strings=[("III", "IV")],
+        accidental_strings=[("II -", "V")],
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.Clef("treble"),
+            abjad.LilyPondLiteral(r"\set Staff.forceClef = ##t", site="before"),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
     ),
     trinton.attachment_command(
         attachments=[
@@ -1206,36 +1246,14 @@ trinton.make_music(
 trinton.make_music(
     lambda _: trinton.select_target(_, (12,)),
     evans.RhythmHandler(evans.tuplet([(1, 1, 1)])),
-    evans.PitchHandler(["g''", "a''", "b'"]),
+    evans.PitchHandler(["d'", "c'", "b'"]),
     trinton.change_notehead_command(
         notehead="harmonic",
         selector=trinton.logical_ties(first=True, pitched=True, grace=False),
     ),
     library.accidentals(
         selector=trinton.select_logical_ties_by_index([0], pitched=True, grace=False),
-        accidental_strings=[("III", "IV")],
-    ),
-    trinton.attachment_command(
-        attachments=[
-            abjad.Clef("treble"),
-            abjad.LilyPondLiteral(r"\set Staff.forceClef = ##t", site="before"),
-        ],
-        selector=trinton.select_leaves_by_index([0]),
-    ),
-    voice=score["viola 2 voice"],
-)
-
-trinton.make_music(
-    lambda _: trinton.select_target(_, (12,)),
-    evans.RhythmHandler(evans.tuplet([(1, 1, 1)])),
-    evans.PitchHandler(["g''", "a''", "b'"]),
-    trinton.change_notehead_command(
-        notehead="harmonic",
-        selector=trinton.logical_ties(first=True, pitched=True, grace=False),
-    ),
-    library.accidentals(
-        selector=trinton.select_logical_ties_by_index([0], pitched=True, grace=False),
-        accidental_strings=[("III", "IV")],
+        accidental_strings=[("II -", "V")],
     ),
     trinton.attachment_command(
         attachments=[
@@ -1250,7 +1268,7 @@ trinton.make_music(
 trinton.make_music(
     lambda _: trinton.select_target(_, (15,)),
     evans.RhythmHandler(evans.tuplet([(3, 3, -2, 1, 1)])),
-    evans.PitchHandler(["e''", "g''", "a''", "a''"]),
+    evans.PitchHandler(["b", "d'", "c'", "c'"]),
     trinton.change_notehead_command(
         notehead="harmonic",
         selector=trinton.select_logical_ties_by_index(
@@ -1265,7 +1283,7 @@ trinton.make_music(
     ),
     library.accidentals(
         selector=trinton.select_logical_ties_by_index([1], pitched=True, grace=False),
-        accidental_strings=[("III", "IV")],
+        accidental_strings=[("II -", "V")],
     ),
     trinton.attachment_command(
         attachments=[
