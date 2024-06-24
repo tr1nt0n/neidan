@@ -43,6 +43,7 @@ def varied_trills(
     speed_factor,
     thickness=3,
     selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+    head=False,
 ):
     def trills(argument):
         if speed_factor > 0.9:
@@ -59,6 +60,12 @@ def varied_trills(
             rf"- \tweak details.squiggle-speed-factor {speed_factor}",
             rf"- \tweak thickness {thickness}",
         )
+
+        if head is True:
+            start_trill = abjad.bundle(
+                abjad.StartTrillSpan(),
+                r"""- \tweak bound-details.left.text \markup { \center-column { \fontsize #5 \override #'(font-name . "ekmelos") \line { \char ##xe0D9 | \char ##xe0A4 } } }""",
+            )
 
         stop_trill = abjad.StopTrillSpan()
 

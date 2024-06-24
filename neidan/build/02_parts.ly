@@ -1,17 +1,3 @@
-  %! abjad.LilyPondFile._get_format_pieces()
-\version "2.23.81"
-  %! abjad.LilyPondFile._get_format_pieces()
-\language "english"
-  %! abjad.LilyPondFile._get_format_pieces()
-\version "2.23.81"
-  %! abjad.LilyPondFile._get_format_pieces()
-\language "english"
-\include "/Users/trintonprater/scores/neidan/neidan/build/neidan-stylesheet.ily"
-\include "/Users/trintonprater/abjad/abjad/scm/abjad.ily"
-  %! abjad.LilyPondFile._get_format_pieces()
-\score
-  %! abjad.LilyPondFile._get_format_pieces()
-{
     \context Score = "Score"
     <<
         \context TimeSignatureContext = "Global Context"
@@ -408,16 +394,16 @@
                             \stopTextSpan
                         }
                           %! +SCORE
-                        \once \override MultiMeasureRest.transparent = ##t
+                    %%% \once \override MultiMeasureRest.transparent = ##t
                           %! +SCORE
-                        \once \override Rest.transparent = ##t
+                    %%% \once \override Rest.transparent = ##t
                         \once \revert Staff.StaffSymbol.line-positions
                         \once \override Staff.Clef.stencil = ##f
                           %! +SCORE
-                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    %%% \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                           %! +SCORE
-                        \stopStaff \startStaff
+                    %%% \stopStaff \startStaff
                         \once \override TupletBracket.stencil = ##f
                         \once \override TupletNumber.stencil = ##f
                         \tweak text #tuplet-number::calc-fraction-text
@@ -1660,16 +1646,16 @@
                         \stopTextSpanThree
                         \stopTextSpanTwo
                           %! +SCORE
-                        \once \override MultiMeasureRest.transparent = ##t
+                    %%% \once \override MultiMeasureRest.transparent = ##t
                           %! +SCORE
-                        \once \override Rest.transparent = ##t
+                    %%% \once \override Rest.transparent = ##t
                         \once \revert Staff.StaffSymbol.line-positions
                         \once \override Staff.Clef.stencil = ##f
                           %! +SCORE
-                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    %%% \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                           %! +SCORE
-                        \stopStaff \startStaff
+                    %%% \stopStaff \startStaff
                     }
                 }
                 \context leftHandStaff = "viola 2 staff"
@@ -1677,18 +1663,18 @@
                     \context Voice = "viola 2 voice"
                     {
                           %! +SCORE
-                        \once \override Staff.BarLine.transparent = ##f
+                    %%% \once \override Staff.BarLine.transparent = ##f
                         \once \revert Staff.StaffSymbol.line-positions
                         \once \override Staff.Clef.stencil = ##f
                           %! +SCORE
-                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    %%% \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                           %! +SCORE
-                        \once \override Staff.TimeSignature.transparent = ##t
+                    %%% \once \override Staff.TimeSignature.transparent = ##t
                           %! +SCORE
-                        \once \override MultiMeasureRest.transparent = ##t
+                    %%% \once \override MultiMeasureRest.transparent = ##t
                         R1 * 5/8
                           %! +SCORE
-                        \stopStaff \startStaff
+                    %%% \stopStaff \startStaff
                         \override Dots.staff-position = #2
                         \big-half-harmonic
                         \once \override Staff.Accidental.stencil = #ly:text-interface::print
@@ -1814,22 +1800,22 @@
                             }
                         }
                           %! +SCORE
-                        \once \override Staff.BarLine.transparent = ##f
+                    %%% \once \override Staff.BarLine.transparent = ##f
                         \once \override MultiMeasureRest.transparent = ##t
                         \once \override Rest.transparent = ##t
                         \once \revert Staff.StaffSymbol.line-positions
                         \once \override Staff.Clef.stencil = ##f
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                           %! +SCORE
-                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    %%% \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                           %! +SCORE
-                        \once \override Staff.TimeSignature.transparent = ##t
+                    %%% \once \override Staff.TimeSignature.transparent = ##t
                           %! +SCORE
-                        \once \override MultiMeasureRest.transparent = ##t
+                    %%% \once \override MultiMeasureRest.transparent = ##t
                         R1 * 1/4
                         \stopStaff \startStaff
                           %! +SCORE
-                        \stopStaff \startStaff
+                    %%% \stopStaff \startStaff
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 24/47
                         {
@@ -2232,40 +2218,39 @@
                             r4.
                         }
                           %! +SCORE
-                        \once \override Staff.BarLine.transparent = ##f
+                    %%% \once \override Staff.BarLine.transparent = ##f
                         \once \revert Staff.StaffSymbol.line-positions
                         \once \override Staff.Clef.stencil = ##f
                           %! +SCORE
-                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    %%% \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                           %! +SCORE
-                        \once \override Staff.TimeSignature.transparent = ##t
+                    %%% \once \override Staff.TimeSignature.transparent = ##t
                           %! +SCORE
-                        \once \override MultiMeasureRest.transparent = ##t
+                    %%% \once \override MultiMeasureRest.transparent = ##t
                         R1 * 7/8
                           %! +SCORE
-                        \stopStaff \startStaff
+                    %%% \stopStaff \startStaff
                           %! +SCORE
-                        \once \override Staff.BarLine.transparent = ##f
+                    %%% \once \override Staff.BarLine.transparent = ##f
                         \once \override MultiMeasureRest.transparent = ##t
                         \once \override Rest.transparent = ##t
                         \once \revert Staff.StaffSymbol.line-positions
                         \once \override Staff.Clef.stencil = ##f
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                           %! +SCORE
-                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    %%% \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                           %! +SCORE
-                        \once \override Staff.TimeSignature.transparent = ##t
+                    %%% \once \override Staff.TimeSignature.transparent = ##t
                           %! +SCORE
-                        \once \override MultiMeasureRest.transparent = ##t
+                    %%% \once \override MultiMeasureRest.transparent = ##t
                         R1 * 1/4
                         - \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #-2 \box \line { ( Slide in left hand ) }
                         \stopStaff \startStaff
                           %! +SCORE
-                        \stopStaff \startStaff
+                    %%% \stopStaff \startStaff
                     }
                 }
             >>
         >>
     >>
   %! abjad.LilyPondFile._get_format_pieces()
-}

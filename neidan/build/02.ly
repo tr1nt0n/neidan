@@ -1,17 +1,3 @@
-  %! abjad.LilyPondFile._get_format_pieces()
-\version "2.23.81"
-  %! abjad.LilyPondFile._get_format_pieces()
-\language "english"
-  %! abjad.LilyPondFile._get_format_pieces()
-\version "2.23.81"
-  %! abjad.LilyPondFile._get_format_pieces()
-\language "english"
-\include "/Users/trintonprater/scores/neidan/neidan/build/neidan-stylesheet.ily"
-\include "/Users/trintonprater/abjad/abjad/scm/abjad.ily"
-  %! abjad.LilyPondFile._get_format_pieces()
-\score
-  %! abjad.LilyPondFile._get_format_pieces()
-{
     \context Score = "Score"
     <<
         \context TimeSignatureContext = "Global Context"
@@ -2268,4 +2254,3 @@
         >>
     >>
   %! abjad.LilyPondFile._get_format_pieces()
-}

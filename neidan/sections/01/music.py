@@ -1672,7 +1672,7 @@ trinton.whiteout_empty_staves(
 trinton.render_file(
     score=score,
     segment_path="/Users/trintonprater/scores/neidan/neidan/sections/01",
-    build_path="/Users/trintonprater/scores/glossolaly/glossolaly/build",
+    build_path="/Users/trintonprater/scores/neidan/neidan/build",
     segment_name="01",
     includes=[
         "/Users/trintonprater/scores/neidan/neidan/build/neidan-stylesheet.ily",
