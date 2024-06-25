@@ -386,6 +386,28 @@ movements = [
 ]
 
 
+def return_fraction_string_list(tups):
+    _bowing_to_character = {
+        "upbow": "##xe612",
+        "downbow": "##xe610",
+    }
+
+    fraction_list = []
+
+    for tup in tups:
+        if len(tup) == 3:
+            fraction_list.append(
+                rf"""\markup \concat {{ \center-column {{ \line {{ \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char {_bowing_to_character[tup[0]]} }} \line {{ \upright \fraction {tup[1]} {tup[-1]} }} }} }}"""
+            )
+
+        else:
+            fraction_list.append(
+                rf"\markup \concat {{ \upright \fraction {tup[0]} {tup[-1]} }}"
+            )
+
+    return fraction_list
+
+
 def return_movement_markup(movement, padding=14):
     return abjad.bundle(
         movements[movement], abjad.Tweak(rf"- \tweak padding #{padding}")
@@ -454,6 +476,7 @@ def fermata_measure_spanner(fermata, measure, voice, repeat=None):
 
 _metronome_marks = {
     "80": """\\abjad-metronome-mark-markup #3 #0 #2 #"80" """,
+    "144": """\\abjad-metronome-mark-markup #3 #0 #2 #"144" """,
 }
 
 
