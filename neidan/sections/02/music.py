@@ -178,7 +178,7 @@ trinton.make_music(
     trinton.attachment_command(
         attachments=[
             abjad.bundle(
-                abjad.Articulation("downbow"), abjad.Tweak(r"- \tweak Y-offset -1")
+                abjad.Articulation("upbow"), abjad.Tweak(r"- \tweak Y-offset -1")
             )
         ],
         selector=trinton.select_logical_ties_by_index(
@@ -189,7 +189,7 @@ trinton.make_music(
     trinton.attachment_command(
         attachments=[
             abjad.bundle(
-                abjad.Articulation("upbow"), abjad.Tweak(r"- \tweak Y-offset -1")
+                abjad.Articulation("downbow"), abjad.Tweak(r"- \tweak Y-offset -1")
             )
         ],
         selector=trinton.select_logical_ties_by_index(
@@ -376,11 +376,12 @@ trinton.make_music(
         attachments=cycle(
             [
                 abjad.bundle(
-                    abjad.Articulation("downbow"),
+                    abjad.Articulation("upbow"),
                     abjad.Tweak(r"- \tweak Y-offset -1.5"),
                 ),
                 abjad.bundle(
-                    abjad.Articulation("upbow"), abjad.Tweak(r"- \tweak Y-offset -1.5")
+                    abjad.Articulation("downbow"),
+                    abjad.Tweak(r"- \tweak Y-offset -1.5"),
                 ),
             ]
         ),
@@ -439,7 +440,7 @@ trinton.make_music(
         full_string=False,
         right_padding=0,
         command="Three",
-        tweaks=[r"- \tweak Y-offset 1.5"],
+        tweaks=[r"- \tweak Y-offset 2"],
     ),
     voice=score["viola 1 voice"],
 )
@@ -493,19 +494,19 @@ trinton.make_music(
     trinton.linear_attachment_command(
         attachments=[
             abjad.bundle(
-                abjad.Articulation("upbow"), abjad.Tweak(r"- \tweak Y-offset -1.5")
+                abjad.Articulation("downbow"), abjad.Tweak(r"- \tweak Y-offset -1.5")
             ),
             abjad.bundle(
-                abjad.Articulation("downbow"), abjad.Tweak(r"- \tweak Y-offset -1")
+                abjad.Articulation("upbow"), abjad.Tweak(r"- \tweak Y-offset -1")
             ),
             abjad.bundle(
-                abjad.Articulation("upbow"), abjad.Tweak(r"- \tweak Y-offset -0.5")
+                abjad.Articulation("downbow"), abjad.Tweak(r"- \tweak Y-offset -0.5")
             ),
             abjad.bundle(
-                abjad.Articulation("downbow"), abjad.Tweak(r"- \tweak Y-offset 0")
+                abjad.Articulation("upbow"), abjad.Tweak(r"- \tweak Y-offset 0")
             ),
             abjad.bundle(
-                abjad.Articulation("upbow"), abjad.Tweak(r"- \tweak Y-offset 0.5")
+                abjad.Articulation("downbow"), abjad.Tweak(r"- \tweak Y-offset 0.5")
             ),
         ],
         selector=trinton.logical_ties(first=True, pitched=True, grace=False),
@@ -562,10 +563,10 @@ trinton.make_music(
         attachments=cycle(
             [
                 abjad.bundle(
-                    abjad.Articulation("downbow"), abjad.Tweak(r"- \tweak Y-offset 0")
+                    abjad.Articulation("upbow"), abjad.Tweak(r"- \tweak Y-offset 0")
                 ),
                 abjad.bundle(
-                    abjad.Articulation("upbow"), abjad.Tweak(r"- \tweak Y-offset 0")
+                    abjad.Articulation("downbow"), abjad.Tweak(r"- \tweak Y-offset 0")
                 ),
             ]
         ),
@@ -643,10 +644,10 @@ trinton.make_music(
         attachments=cycle(
             [
                 abjad.bundle(
-                    abjad.Articulation("downbow"), abjad.Tweak(r"- \tweak Y-offset 0")
+                    abjad.Articulation("upbow"), abjad.Tweak(r"- \tweak Y-offset 0")
                 ),
                 abjad.bundle(
-                    abjad.Articulation("upbow"), abjad.Tweak(r"- \tweak Y-offset 0")
+                    abjad.Articulation("downbow"), abjad.Tweak(r"- \tweak Y-offset 0")
                 ),
             ]
         ),

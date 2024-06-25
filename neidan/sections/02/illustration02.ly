@@ -288,7 +288,7 @@
                                             }
                         e'!64
                         - \tweak Y-offset -1
-                        ^ \downbow
+                        ^ \upbow
                         \ff
                         - \tweak padding #5.5
                         - \abjad-dashed-line-with-hook
@@ -306,7 +306,7 @@
                         \once \override NoteHead.duration-log = 2
                         e'64
                         - \tweak Y-offset -1
-                        ^ \upbow
+                        ^ \downbow
                         \once \revert Staff.Stem.stencil
                         \once \override Staff.Stem.details.lengths = #'(13.75)
                         \once \override Staff.Stem.Y-extent = ##f
@@ -318,7 +318,7 @@
                         \once \override Dots.stencil = ##f
                         e'16
                         - \tweak Y-offset -1
-                        ^ \downbow
+                        ^ \upbow
                         _ \accent
                         - \abjad-zero-padding-glissando
                         \glissando
@@ -333,7 +333,7 @@
                         \once \override Dots.stencil = ##f
                         e'16
                         - \tweak Y-offset -1
-                        ^ \downbow
+                        ^ \upbow
                         _ \accent
                         - \abjad-zero-padding-glissando
                         \glissando
@@ -347,7 +347,7 @@
                         \revert Dots.staff-position
                         e'64
                         - \tweak Y-offset -1
-                        ^ \upbow
+                        ^ \downbow
                         \once \override RepeatTie.transparent = ##t
                         \once \override Stem.stencil = ##f
                         \once \override Beam.stencil = ##f
@@ -357,7 +357,7 @@
                         \once \override NoteHead.duration-log = 2
                         e'64
                         - \tweak Y-offset -1
-                        ^ \downbow
+                        ^ \upbow
                         \!
                         _ \accent
                         \stopTextSpan
@@ -608,9 +608,9 @@
                             d'4
                             - \accent
                             - \tweak Y-offset -1.5
-                            - \downbow
+                            - \upbow
                             \stopTextSpanOne
-                            - \tweak Y-offset 1.5
+                            - \tweak Y-offset 2
                             - \tweak padding #0
                             - \abjad-solid-line-with-arrow
                             - \tweak bound-details.left.text \markup \concat { \upright { "aperiodic" } \hspace #0.5 }
@@ -642,7 +642,7 @@
                             \once \override Dots.stencil = ##f
                             d'!4.
                             - \tweak Y-offset -1.5
-                            - \upbow
+                            - \downbow
                             \fp
                             - \abjad-zero-padding-glissando
                             \glissando
@@ -658,7 +658,7 @@
                             \once \override Dots.stencil = ##f
                             d'8
                             - \tweak Y-offset -1.5
-                            - \downbow
+                            - \upbow
                             - \abjad-zero-padding-glissando
                             \glissando
                             \once \revert Staff.Stem.stencil
@@ -672,7 +672,7 @@
                             \once \override Dots.stencil = ##f
                             d'4.
                             - \tweak Y-offset -1.5
-                            - \upbow
+                            - \downbow
                             - \abjad-zero-padding-glissando
                             \glissando
                             \once \revert Staff.Stem.stencil
@@ -686,7 +686,7 @@
                             \once \override Dots.stencil = ##f
                             d'8
                             - \tweak Y-offset -1.5
-                            - \downbow
+                            - \upbow
                             \stopTextSpanTwo
                             - \abjad-zero-padding-glissando
                             \glissando
@@ -701,7 +701,7 @@
                             \once \override Dots.stencil = ##f
                             d'8
                             - \tweak Y-offset -1.5
-                            - \upbow
+                            - \downbow
                             - \abjad-zero-padding-glissando
                             \glissando
                             \once \override RepeatTie.transparent = ##t
@@ -713,7 +713,7 @@
                             \once \override NoteHead.duration-log = 2
                             d'8
                             - \tweak Y-offset -1.5
-                            - \downbow
+                            - \upbow
                             \stopTextSpanThree
                             - \abjad-zero-padding-glissando
                             \glissando
@@ -726,7 +726,7 @@
                             \once \override NoteHead.duration-log = 2
                             d'8
                             - \tweak Y-offset -1.5
-                            - \upbow
+                            - \downbow
                             - \abjad-zero-padding-glissando
                             \glissando
                             \once \override RepeatTie.transparent = ##t
@@ -739,7 +739,7 @@
                             \afterGrace
                             d'8
                             - \tweak Y-offset -1.5
-                            - \downbow
+                            - \upbow
                             - \abjad-zero-padding-glissando
                             \glissando
                             {
@@ -789,7 +789,7 @@
                             \once \override Dots.stencil = ##f
                             d'!8
                             - \tweak Y-offset -1.5
-                            - \upbow
+                            - \downbow
                             \fp
                             - \abjad-zero-padding-glissando
                             \glissando
@@ -808,7 +808,7 @@
                             \once \override NoteHead.duration-log = 2
                             e'8
                             - \tweak Y-offset -1
-                            - \downbow
+                            - \upbow
                             - \abjad-zero-padding-glissando
                             \glissando
                             \once \revert Staff.Stem.stencil
@@ -822,7 +822,7 @@
                             \once \override Dots.stencil = ##f
                             f'8
                             - \tweak Y-offset -0.5
-                            - \upbow
+                            - \downbow
                             \pp
                             - \abjad-zero-padding-glissando
                             \glissando
@@ -838,7 +838,7 @@
                             \once \override Dots.stencil = ##f
                             g'8
                             - \tweak Y-offset 0
-                            - \downbow
+                            - \upbow
                             - \abjad-zero-padding-glissando
                             \glissando
                             \once \override RepeatTie.transparent = ##t
@@ -851,7 +851,7 @@
                             \afterGrace
                             a'8
                             - \tweak Y-offset 0.5
-                            - \upbow
+                            - \downbow
                             - \abjad-zero-padding-glissando
                             \glissando
                             {
@@ -901,47 +901,6 @@
                             \once \override Dots.stencil = ##f
                             e'!8
                             - \tweak Y-offset 0
-                            - \downbow
-                            \ff
-                            ^ \tenuto
-                            - \abjad-zero-padding-glissando
-                            \glissando
-                            \once \override RepeatTie.transparent = ##t
-                            \once \override Stem.stencil = ##f
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override Dots.stencil = ##f
-                            \once \override Tie.stencil = ##f
-                            \once \override NoteHead.duration-log = 2
-                            e'8
-                            - \tweak Y-offset 0
-                            - \upbow
-                            \mf
-                            - \abjad-zero-padding-glissando
-                            \glissando
-                            \once \override RepeatTie.transparent = ##t
-                            \once \override Stem.stencil = ##f
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override Dots.stencil = ##f
-                            \once \override Tie.stencil = ##f
-                            \once \override NoteHead.duration-log = 2
-                            e'8
-                            - \tweak Y-offset 0
-                            - \downbow
-                            - \abjad-zero-padding-glissando
-                            \glissando
-                            \once \revert Staff.Stem.stencil
-                            \once \override Staff.Stem.details.lengths = #'(14.5)
-                            \once \override Staff.Stem.Y-extent = ##f
-                            \once \override Staff.Stem.Y-offset = 0
-                            \once \override Staff.Stem.layer = 0
-                            \once \override Staff.Stem.direction = #DOWN
-                            \once \override Staff.Stem.thickness = #2
-                            \once \override Flag.stencil = ##f
-                            \once \override Dots.stencil = ##f
-                            e'8
-                            - \tweak Y-offset 0
                             - \upbow
                             \ff
                             ^ \tenuto
@@ -998,6 +957,47 @@
                             e'8
                             - \tweak Y-offset 0
                             - \upbow
+                            \mf
+                            - \abjad-zero-padding-glissando
+                            \glissando
+                            \once \override RepeatTie.transparent = ##t
+                            \once \override Stem.stencil = ##f
+                            \once \override Beam.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override Dots.stencil = ##f
+                            \once \override Tie.stencil = ##f
+                            \once \override NoteHead.duration-log = 2
+                            e'8
+                            - \tweak Y-offset 0
+                            - \downbow
+                            - \abjad-zero-padding-glissando
+                            \glissando
+                            \once \revert Staff.Stem.stencil
+                            \once \override Staff.Stem.details.lengths = #'(14.5)
+                            \once \override Staff.Stem.Y-extent = ##f
+                            \once \override Staff.Stem.Y-offset = 0
+                            \once \override Staff.Stem.layer = 0
+                            \once \override Staff.Stem.direction = #DOWN
+                            \once \override Staff.Stem.thickness = #2
+                            \once \override Flag.stencil = ##f
+                            \once \override Dots.stencil = ##f
+                            e'8
+                            - \tweak Y-offset 0
+                            - \upbow
+                            \ff
+                            ^ \tenuto
+                            - \abjad-zero-padding-glissando
+                            \glissando
+                            \once \override RepeatTie.transparent = ##t
+                            \once \override Stem.stencil = ##f
+                            \once \override Beam.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override Dots.stencil = ##f
+                            \once \override Tie.stencil = ##f
+                            \once \override NoteHead.duration-log = 2
+                            e'8
+                            - \tweak Y-offset 0
+                            - \downbow
                             \mf
                             - \abjad-zero-padding-glissando
                             \glissando
@@ -1011,7 +1011,7 @@
                             \afterGrace
                             e'8
                             - \tweak Y-offset 0
-                            - \downbow
+                            - \upbow
                             - \abjad-zero-padding-glissando
                             \glissando
                             {
@@ -1056,7 +1056,7 @@
                             e'!16.
                                 _ #(make-dynamic-script (markup #:whiteout #:italic "ffpp"))
                             - \tweak Y-offset 0
-                            - \downbow
+                            - \upbow
                             ^ \tenuto
                             - \abjad-zero-padding-glissando
                             \glissando
@@ -1073,18 +1073,6 @@
                             \once \override NoteHead.duration-log = 2
                             e'16.
                             - \tweak Y-offset 0
-                            - \upbow
-                            - \abjad-zero-padding-glissando
-                            \glissando
-                            \once \override RepeatTie.transparent = ##t
-                            \once \override Stem.stencil = ##f
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override Dots.stencil = ##f
-                            \once \override Tie.stencil = ##f
-                            \once \override NoteHead.duration-log = 2
-                            e'16.
-                            - \tweak Y-offset 0
                             - \downbow
                             - \abjad-zero-padding-glissando
                             \glissando
@@ -1098,6 +1086,18 @@
                             e'16.
                             - \tweak Y-offset 0
                             - \upbow
+                            - \abjad-zero-padding-glissando
+                            \glissando
+                            \once \override RepeatTie.transparent = ##t
+                            \once \override Stem.stencil = ##f
+                            \once \override Beam.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override Dots.stencil = ##f
+                            \once \override Tie.stencil = ##f
+                            \once \override NoteHead.duration-log = 2
+                            e'16.
+                            - \tweak Y-offset 0
+                            - \downbow
                             - \abjad-zero-padding-glissando
                             \glissando
                             \once \revert Staff.Stem.stencil
@@ -1112,7 +1112,7 @@
                             e'16.
                                 _ #(make-dynamic-script (markup #:whiteout #:italic "mf pp"))
                             - \tweak Y-offset 0
-                            - \downbow
+                            - \upbow
                             ^ \tenuto
                             - \abjad-zero-padding-glissando
                             \glissando
@@ -1126,18 +1126,6 @@
                             \once \override NoteHead.duration-log = 2
                             e'16.
                             - \tweak Y-offset 0
-                            - \upbow
-                            - \abjad-zero-padding-glissando
-                            \glissando
-                            \once \override RepeatTie.transparent = ##t
-                            \once \override Stem.stencil = ##f
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override Dots.stencil = ##f
-                            \once \override Tie.stencil = ##f
-                            \once \override NoteHead.duration-log = 2
-                            e'16.
-                            - \tweak Y-offset 0
                             - \downbow
                             - \abjad-zero-padding-glissando
                             \glissando
@@ -1223,6 +1211,18 @@
                             e'16.
                             - \tweak Y-offset 0
                             - \upbow
+                            - \abjad-zero-padding-glissando
+                            \glissando
+                            \once \override RepeatTie.transparent = ##t
+                            \once \override Stem.stencil = ##f
+                            \once \override Beam.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override Dots.stencil = ##f
+                            \once \override Tie.stencil = ##f
+                            \once \override NoteHead.duration-log = 2
+                            e'16.
+                            - \tweak Y-offset 0
+                            - \downbow
                             \stopTextSpanOne
                             - \abjad-zero-padding-glissando
                             \glissando
@@ -1240,18 +1240,6 @@
                             \once \override NoteHead.duration-log = 2
                             e'16.
                             - \tweak Y-offset 0
-                            - \downbow
-                            - \abjad-zero-padding-glissando
-                            \glissando
-                            \once \override RepeatTie.transparent = ##t
-                            \once \override Stem.stencil = ##f
-                            \once \override Beam.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override Dots.stencil = ##f
-                            \once \override Tie.stencil = ##f
-                            \once \override NoteHead.duration-log = 2
-                            e'16.
-                            - \tweak Y-offset 0
                             - \upbow
                             - \abjad-zero-padding-glissando
                             \glissando
@@ -1277,6 +1265,18 @@
                             e'16.
                             - \tweak Y-offset 0
                             - \upbow
+                            - \abjad-zero-padding-glissando
+                            \glissando
+                            \once \override RepeatTie.transparent = ##t
+                            \once \override Stem.stencil = ##f
+                            \once \override Beam.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override Dots.stencil = ##f
+                            \once \override Tie.stencil = ##f
+                            \once \override NoteHead.duration-log = 2
+                            e'16.
+                            - \tweak Y-offset 0
+                            - \downbow
                             \fff
                             - \abjad-zero-padding-glissando
                             \glissando
@@ -1290,7 +1290,7 @@
                             \afterGrace
                             e'16.
                             - \tweak Y-offset 0
-                            - \downbow
+                            - \upbow
                             - \abjad-zero-padding-glissando
                             \glissando
                             {

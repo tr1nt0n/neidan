@@ -44,6 +44,7 @@ def varied_trills(
     thickness=3,
     selector=trinton.select_leaves_by_index([0, -1], pitched=True),
     head=False,
+    strings=None,
 ):
     def trills(argument):
         if speed_factor > 0.9:
@@ -67,6 +68,12 @@ def varied_trills(
                 r"""- \tweak bound-details.left.text \markup { \center-column { \fontsize #5 \override #'(font-name . "ekmelos") \line { \char ##xe0D9 | \char ##xe0A4 } } }""",
             )
 
+        if strings is not None:
+            start_trill = abjad.bundle(
+                abjad.StartTrillSpan(),
+                rf"""- \tweak bound-details.left.text \markup {{ \center-column {{ \fontsize #-5 \line {{ {strings[0]} | {strings[-1]} }} }} }}""",
+            )
+
         stop_trill = abjad.StopTrillSpan()
 
         for tup in tups:
@@ -77,33 +84,96 @@ def varied_trills(
     return trills
 
 
-def accidentals(selector, accidental_strings, site="before", arrows=False):
+def accidentals(selector, accidental_strings, site="before", arrows=None):
     def make_accidentals(argument):
         selections = selector(argument)
         ties = abjad.select.logical_ties(selections)
         for tie, accidental in zip(ties, accidental_strings):
-            if isinstance(accidental, tuple):
-                string_I = accidental[0]
-                string_II = accidental[-1]
+            if arrows is None:
+                if isinstance(accidental, tuple):
+                    string_I = accidental[0]
+                    string_II = accidental[-1]
 
-                accidental_markup = rf"""\markup
-                    \fontsize #-3
-                    \raise #0.4
-                    {{
-                        \center-column {{
-                            \line {{
-                                {string_I}
+                    accidental_markup = rf"""\markup
+                        \fontsize #-3
+                        \raise #0.4
+                        {{
+                            \center-column {{
+                                \line {{
+                                    {string_I}
+                                }}
+                                \line {{
+                                    {string_II}
+                                }}
                             }}
-                            \line {{
-                                {string_II}
-                            }}
-                        }}
-                    }}"""
+                        }}"""
 
+                else:
+                    accidental_markup = (
+                        rf"""\markup \fontsize #-3 \lower #0.6 {{ {accidental} }}"""
+                    )
             else:
-                accidental_markup = (
-                    rf"""\markup \fontsize #-3 \lower #0.6 {{ {accidental} }}"""
-                )
+                if isinstance(accidental, tuple):
+                    string_I = accidental[0]
+                    string_II = accidental[-1]
+
+                    accidental_markup = rf"""\markup
+                        \fontsize #-3
+                        \raise #2.25
+                        {{
+                            \center-column {{
+                                \line {{
+                                    \lower #1.75
+                                    \override #'(font-name . "ekmelos")
+                                    \char ##xe00C
+                                }}
+                                \line {{
+                                    {string_I}
+                                }}
+                                \line {{
+                                    {string_II}
+                                }}
+                                \line {{
+                                    \raise #1.75
+                                    \override #'(font-name . "ekmelos")
+                                    \char ##xe00B
+                                }}
+                            }}
+                        }}"""
+
+                else:
+                    if arrows == "up":
+                        accidental_markup = rf"""\markup
+                            \fontsize #-3
+                            \raise #1.5
+                            {{
+                                \center-column {{
+                                    \line {{
+                                        \lower #1.75
+                                        \override #'(font-name . "ekmelos")
+                                        \char ##xe00C
+                                    }}
+                                    \line {{
+                                        {accidental}
+                                    }}
+                                }}
+                            }}"""
+
+                    if arrows == "down":
+                        accidental_markup = rf"""\markup
+                            \fontsize #-3
+                            \raise #1.5
+                            {{
+                                    \line {{
+                                        \lower #1.75
+                                        {accidental}
+                                    }}
+                                    \line {{
+                                        \override #'(font-name . "ekmelos")
+                                        \char ##xe00B
+                                    }}
+                                }}
+                            }}"""
 
             first_leaf = abjad.select.leaf(tie, 0)
             first_leaf.note_head.is_forced = True

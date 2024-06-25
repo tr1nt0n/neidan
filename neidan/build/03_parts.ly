@@ -2,7 +2,7 @@
     <<
         \context TimeSignatureContext = "Global Context"
         {
-            \set Score.proportionalNotationDuration = #(ly:make-moment 1 70)
+            \set Score.proportionalNotationDuration = #(ly:make-moment 1 90)
             \time 5/32
             ^ \markup {
               \raise #17 \with-dimensions-from \null
@@ -53,7 +53,7 @@
             - \tweak padding -7
             _ \middle-fermata
             \once \override Score.BarLine.transparent = ##f
-            \set Score.proportionalNotationDuration = #(ly:make-moment 1 70)
+            \set Score.proportionalNotationDuration = #(ly:make-moment 1 90)
             \time 80/32
             s1 * 5/2
             \set Score.proportionalNotationDuration = #(ly:make-moment 1 20)
@@ -112,24 +112,24 @@
                         \glissando
                         - \tweak padding #9
                         - \abjad-solid-line-with-arrow
-                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \upright \fraction 0 5 } } } \hspace #0.5 }
+                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \upright \fraction 0 5 } } } \hspace #0.5 }
                         - \tweak bound-details.right.padding 1
                         \startTextSpan
                         \<
                         \once \override Staff.Accidental.stencil = #ly:text-interface::print
                         \once \override Staff.Accidental.text = \markup
-                                            \fontsize #-3
-                                            \raise #0.4
-                                            {
-                                                \center-column {
-                                                    \line {
-                                                        III -
-                                                    }
-                                                    \line {
-                                                        VI
+                                                \fontsize #-3
+                                                \raise #0.4
+                                                {
+                                                    \center-column {
+                                                        \line {
+                                                            III -
+                                                        }
+                                                        \line {
+                                                            VI
+                                                        }
                                                     }
                                                 }
-                                            }
                         e'!16
                         )
                         \stopTextSpan
@@ -151,7 +151,7 @@
                         ]
                         - \tweak padding #9
                         - \abjad-solid-line-with-arrow
-                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \upright \fraction 5 5 } } } \hspace #0.5 }
+                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \upright \fraction 5 5 } } } \hspace #0.5 }
                         - \tweak bound-details.right.text \markup \concat { \upright \fraction 0 5 }
                         - \tweak bound-details.right.padding 1
                         \startTextSpan
@@ -182,7 +182,7 @@
                         \glissando
                         - \tweak padding #5.5
                         - \abjad-dashed-line-with-hook
-                        - \tweak bound-details.left.text \markup \concat { \upright { "extremely slow bow" } \hspace #0.5 }
+                        - \tweak bound-details.left.text \markup \concat { \upright { "XSB" } \hspace #0.5 }
                         - \tweak bound-details.right.padding -1
                         \startTextSpan
                         - \tweak stencil #constante-hairpin
@@ -235,7 +235,7 @@
                         \glissando
                         - \tweak padding #5.5
                         - \abjad-dashed-line-with-hook
-                        - \tweak bound-details.left.text \markup \concat { \upright { "extremely slow bow" } \hspace #0.5 }
+                        - \tweak bound-details.left.text \markup \concat { \upright { "XSB" } \hspace #0.5 }
                         - \tweak bound-details.right.padding -1
                         \startTextSpan
                         - \tweak stencil #constante-hairpin
@@ -262,23 +262,23 @@
                         \glissando
                         - \tweak padding #10
                         - \abjad-solid-line-with-arrow
-                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \upright \fraction 5 5 } } } \hspace #0.5 }
+                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \upright \fraction 5 5 } } } \hspace #0.5 }
                         \startTextSpan
                         \<
                         \once \override Staff.Accidental.stencil = #ly:text-interface::print
                         \once \override Staff.Accidental.text = \markup
-                                            \fontsize #-3
-                                            \raise #0.4
-                                            {
-                                                \center-column {
-                                                    \line {
-                                                        IV -
-                                                    }
-                                                    \line {
-                                                        VII
+                                                \fontsize #-3
+                                                \raise #0.4
+                                                {
+                                                    \center-column {
+                                                        \line {
+                                                            IV -
+                                                        }
+                                                        \line {
+                                                            VII
+                                                        }
                                                     }
                                                 }
-                                            }
                         e'!8.
                         \f
                         \stopTextSpan
@@ -289,7 +289,7 @@
                         \>
                         - \tweak padding #10
                         - \abjad-solid-line-with-arrow
-                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \upright \fraction 0 5 } } } \hspace #0.5 }
+                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \upright \fraction 0 5 } } } \hspace #0.5 }
                         \startTextSpan
                         \revert Dots.staff-position
                         \afterGrace
@@ -324,50 +324,167 @@
                           %! +SCORE
                     %%% \stopStaff \startStaff
                         \override Dots.staff-position = #2
-                        d'4.
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup
+                                                \fontsize #-3
+                                                \raise #0.4
+                                                {
+                                                    \center-column {
+                                                        \line {
+                                                            I
+                                                        }
+                                                        \line {
+                                                            II
+                                                        }
+                                                    }
+                                                }
+                        d'!4.
+                            _ #(make-dynamic-script (markup #:whiteout #:italic "ffp"))
                         - \abjad-zero-padding-glissando
                         \glissando
+                        - \tweak padding #13
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \upright \fraction 5 5 } } } \hspace #0.5 }
+                        \startTextSpan
+                        - \tweak stencil #abjad-flared-hairpin
+                        \<
                         \revert Dots.staff-position
                         d'32
+                        - \accent
+                        \f
+                        \stopTextSpan
+                        - \tweak padding #13
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \upright \fraction 1 5 } } } \hspace #0.5 }
+                        \startTextSpan
                         \override Dots.staff-position = #2
-                        d'8
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup \fontsize #-3 \lower #0.6 { VII }
+                        d'!8
+                        \mf
+                        \stopTextSpan
                         [
                         - \abjad-zero-padding-glissando
                         \glissando
+                        - \tweak padding #13
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \upright \fraction 5 5 } } } \hspace #0.5 }
+                        \startTextSpan
+                        - \tweak stencil #constante-hairpin
+                        \<
                         \revert Dots.staff-position
                         e'16.
-                        d'32
+                        \stopTextSpan
+                        - \tweak padding #13
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \concat { \upright \fraction 3 5 } \hspace #0.5 }
+                        \startTextSpan
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup
+                                                \fontsize #-3
+                                                \raise #0.4
+                                                {
+                                                    \center-column {
+                                                        \line {
+                                                            I
+                                                        }
+                                                        \line {
+                                                            II
+                                                        }
+                                                    }
+                                                }
+                        d'!32
+                        - \accent
+                        \f
+                        \stopTextSpan
                         ]
+                        - \tweak padding #13
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \upright \fraction 0 5 } } } \hspace #0.5 }
+                        \startTextSpan
                         \override Dots.staff-position = #2
-                        f'16.
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup \fontsize #-3 \lower #0.6 { VI }
+                        f'!16.
+                        \p
+                        \stopTextSpan
                         [
                         - \abjad-zero-padding-glissando
                         \glissando
+                        - \tweak padding #13
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \upright \fraction 5 5 } } } \hspace #0.5 }
+                        \startTextSpan
+                        \<
                         \revert Dots.staff-position
                         \set stemLeftBeamCount = 2
                         \set stemRightBeamCount = 1
                         d'16
+                        \mf
+                        \stopTextSpan
+                        - \tweak padding #13
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \concat { \upright \fraction 2 5 } \hspace #0.5 }
+                        \startTextSpan
                         \override Dots.staff-position = #2
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup \fontsize #-3 \lower #0.6 { II }
                         \set stemLeftBeamCount = 1
                         \set stemRightBeamCount = 2
-                        d'16
+                        d'!16
+                        \stopTextSpan
                         - \abjad-zero-padding-glissando
                         \glissando
+                        - \tweak circled-tip ##t
+                        \<
+                        - \tweak padding #13
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \upright \fraction 0 5 } } } \hspace #0.5 }
+                        \startTextSpan
                         f'16.
+                        \ff
+                        \stopTextSpan
                         - \abjad-zero-padding-glissando
                         \glissando
+                        - \tweak padding #13
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \concat { \upright \fraction 1 5 } \hspace #0.5 }
+                        \startTextSpan
                         \revert Dots.staff-position
                         c'32
+                        - \accent
+                        \f
+                        \stopTextSpan
                         ]
+                        - \tweak padding #13
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \upright \fraction 5 5 } } } \hspace #0.5 }
+                        \startTextSpan
                         \override Dots.staff-position = #2
-                        d'16.
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup \fontsize #-3 \lower #0.6 { VII }
+                        d'!16.
+                        \mp
+                        \stopTextSpan
                         [
                         - \abjad-zero-padding-glissando
                         \glissando
+                        - \tweak padding #13
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \upright \fraction 0 5 } } } \hspace #0.5 }
+                        \startTextSpan
+                        \<
                         \afterGrace
                         g'16.
+                        \mf
+                        \stopTextSpan
                         - \abjad-zero-padding-glissando
                         \glissando
+                        - \tweak padding #13
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \concat { \upright \fraction 4 5 } \hspace #0.5 }
+                        \startTextSpan
+                        \>
                         {
                             \once \override NoteHead.X-extent = #'(0 . 0)
                             \once \override NoteHead.transparent = ##t
@@ -382,9 +499,18 @@
                             - \abjad-zero-padding-glissando
                             \glissando
                         }
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup \fontsize #-3 \lower #0.6 { I }
                         \revert Dots.staff-position
-                        d'32
+                        d'!32
+                        - \accent
+                        \f
+                        \stopTextSpan
                         ]
+                        - \tweak padding #13
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \upright \fraction 5 5 } } } \hspace #0.5 }
+                        \startTextSpan
                         \override Dots.staff-position = #2
                         \fancy-gliss
                            #'(
@@ -401,53 +527,187 @@
                          )
                          #0.5
                         f'8
+                        \pp
+                        \stopTextSpan
                         [
                         - \abjad-zero-padding-glissando
                         \glissando
+                        - \tweak padding #13
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \upright \fraction 0 5 } } } \hspace #0.5 }
+                        \startTextSpan
+                        \<
+                        - \tweak bound-details.left.text \markup { \center-column { \fontsize #-5 \line { VI | VII } } }
+                        \startTrillSpan
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup \fontsize #-3 \lower #0.6 { I }
                         \revert Dots.staff-position
-                        c'32
+                        c'!32
+                        \f
+                        \stopTextSpan
                         ]
+                        - \tweak padding #13
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \upright \fraction 5 5 } } } \hspace #0.5 }
+                        \startTextSpan
                         \override Dots.staff-position = #2
-                        e'16
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup \fontsize #-3 \lower #0.6 { V }
+                        e'!16
+                        - \accent
+                        \mf
+                        \stopTextSpan
+                        \stopTrillSpan
                         [
                         - \abjad-zero-padding-glissando
                         \glissando
+                        - \tweak padding #13
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \upright \fraction 0 5 } } } \hspace #0.5 }
+                        \startTextSpan
+                        - \tweak stencil #constante-hairpin
+                        \<
                         \revert Dots.staff-position
                         d'16.
+                        \stopTextSpan
+                        - \tweak padding #13
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \concat { \upright \fraction 3 5 } \hspace #0.5 }
+                        \startTextSpan
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup \fontsize #-3 \lower #0.6 { II }
                         \set stemLeftBeamCount = 3
                         \set stemRightBeamCount = 1
-                        d'32
+                        d'!32
+                        - \accent
+                        \f
+                        \stopTextSpan
+                        - \tweak padding #13
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \upright \fraction 5 5 } } } \hspace #0.5 }
+                        \startTextSpan
                         \set stemLeftBeamCount = 1
                         \set stemRightBeamCount = 3
                         r32
+                        \stopTextSpan
+                        - \tweak padding #13
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \concat { \upright \fraction 0 5 } \hspace #0.5 }
+                        \startTextSpan
                         \override Dots.staff-position = #2
-                        c'8
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup
+                                                \fontsize #-3
+                                                \raise #0.4
+                                                {
+                                                    \center-column {
+                                                        \line {
+                                                            I
+                                                        }
+                                                        \line {
+                                                            II
+                                                        }
+                                                    }
+                                                }
+                        c'!8
+                        \pp
+                        \stopTextSpan
                         - \abjad-zero-padding-glissando
                         \glissando
+                        - \tweak padding #13
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \upright \fraction 0 5 } } } \hspace #0.5 }
+                        \startTextSpan
                         \revert Dots.staff-position
                         d'32
+                        - \accent
+                        \f
+                        \stopTextSpan
                         ]
+                        - \tweak padding #13
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \upright \fraction 5 5 } } } \hspace #0.5 }
+                        \startTextSpan
                         \override Dots.staff-position = #2
-                        d''8
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup \fontsize #-3 \lower #0.6 { VII }
+                        d''!8
+                        \mp
+                        \stopTextSpan
                         [
                         - \abjad-zero-padding-glissando
                         \glissando
+                        - \tweak padding #13
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \upright \fraction 0 5 } } } \hspace #0.5 }
+                        \startTextSpan
+                        \<
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup \fontsize #-3 \lower #0.6 { I }
                         \revert Dots.staff-position
-                        d'32
+                        d'!32
+                        - \accent
+                        \f
+                        \stopTextSpan
                         ]
+                        - \tweak padding #13
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \upright \fraction 3 5 } } } \hspace #0.5 }
+                        \startTextSpan
                         \override Dots.staff-position = #2
                         b'8
+                            _ #(make-dynamic-script (markup #:whiteout #:italic "f mp"))
+                        \stopTextSpan
                         [
                         - \abjad-zero-padding-glissando
                         \glissando
+                        - \tweak padding #13
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \upright \fraction 0 5 } } } \hspace #0.5 }
+                        \startTextSpan
+                        - \tweak stencil #abjad-flared-hairpin
+                        \<
+                        - \tweak bound-details.left.text \markup { \center-column { \fontsize #-5 \line { VI | VII } } }
+                        \startTrillSpan
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup \fontsize #-3 \lower #0.6 { II }
                         \revert Dots.staff-position
-                        d'32
+                        d'!32
+                        - \accent
+                        \f
+                        \stopTextSpan
                         ]
+                        - \tweak padding #13
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \upright \fraction 2 5 } } } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup \concat { \upright \fraction 0 5 }
+                        \startTextSpan
                         \override Dots.staff-position = #2
                         b16.
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.4
+                                    #:dynamic "fff"
+                                    #:hspace -0.2
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
+                        \stopTextSpan
+                        \stopTrillSpan
                         [
                         - \abjad-zero-padding-glissando
                         \glissando
+                        - \tweak padding #5.5
+                        - \abjad-dashed-line-with-hook
+                        - \tweak bound-details.left.text \markup \concat { \upright { "XSB" } \hspace #0.5 }
+                        - \tweak bound-details.right.padding -1
+                        \startTextSpan
+                        - \tweak stencil #constante-hairpin
+                        \<
                         \once \override NoteHead.X-extent = #'(0 . 0)
                         \once \override NoteHead.transparent = ##t
                         \revert NoteHead.X-extent
@@ -469,19 +729,72 @@
                             \revert NoteHead.transparent
                             \once \override NoteHead.transparent = ##t
                             b16
+                            \stopTextSpan
                         }
-                        d'32
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup
+                                                \fontsize #-3
+                                                \raise #0.4
+                                                {
+                                                    \center-column {
+                                                        \line {
+                                                            I
+                                                        }
+                                                        \line {
+                                                            II
+                                                        }
+                                                    }
+                                                }
+                        d'!32
+                        - \accent
+                        \f
                         [
+                        - \tweak padding #9
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \upright \fraction 5 5 } } } \hspace #0.5 }
+                        \startTextSpan
                         r32
+                        \stopTextSpan
+                        - \tweak padding #9
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \concat { \upright \fraction 0 5 } \hspace #0.5 }
+                        \startTextSpan
                         \set stemLeftBeamCount = 3
                         \set stemRightBeamCount = 1
                         c'32
+                        - \accent
+                        \stopTextSpan
+                        - \tweak padding #9
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \upright \fraction 5 5 } } } \hspace #0.5 }
+                        \startTextSpan
                         \override Dots.staff-position = #2
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup
+                                                \fontsize #-3
+                                                \raise #0.4
+                                                {
+                                                    \center-column {
+                                                        \line {
+                                                            VI
+                                                        }
+                                                        \line {
+                                                            VII
+                                                        }
+                                                    }
+                                                }
                         \set stemLeftBeamCount = 1
                         \set stemRightBeamCount = 2
-                        f'16.
+                        f'!16.
+                        \stopTextSpan
                         - \abjad-zero-padding-glissando
                         \glissando
+                        - \tweak padding #9
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \upright \fraction 0 5 } } } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup \concat { \upright \fraction 5 5 }
+                        \startTextSpan
+                        \>
                         \afterGrace
                         e'16.
                         ]
@@ -499,6 +812,7 @@
                             \revert NoteHead.transparent
                             \once \override NoteHead.transparent = ##t
                             c'16
+                            \stopTextSpan
                         }
                         \once \revert Staff.StaffSymbol.line-positions
                         \once \override Staff.Clef.stencil = ##f
@@ -512,6 +826,20 @@
                         \times 2/3
                         {
                             \override Dots.staff-position = #2
+                            \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                            \once \override Staff.Accidental.text = \markup
+                                                    \fontsize #-3
+                                                    \raise #0.4
+                                                    {
+                                                        \center-column {
+                                                            \line {
+                                                                III -
+                                                            }
+                                                            \line {
+                                                                VII
+                                                            }
+                                                        }
+                                                    }
                             \override Staff.NoteHead.no-ledgers = ##t\staff-line-count 5
                             \override Staff.StaffSymbol.line-positions = #'(7 0 -4 -6 -7)
                             \override Staff.Clef.stencil = #ly:text-interface::print
@@ -520,7 +848,7 @@
                             \revert NoteHead.X-extent
                             \revert NoteHead.transparent
                             \clef "treble"
-                            g''32
+                            g''!32
                             - \abjad-zero-padding-glissando
                             \glissando
                             \once \override NoteHead.X-extent = #'(0 . 0)
@@ -558,9 +886,23 @@
                             b'16
                         }
                         \override Dots.staff-position = #2
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup
+                                                \fontsize #-3
+                                                \raise #0.4
+                                                {
+                                                    \center-column {
+                                                        \line {
+                                                            I
+                                                        }
+                                                        \line {
+                                                            II
+                                                        }
+                                                    }
+                                                }
                         \afterGrace
                         \tweak style #'harmonic
-                        g''32
+                        g''!32
                         - \abjad-zero-padding-glissando
                         \glissando
                         {
@@ -636,55 +978,59 @@
                               (15 0 15.5 -2 16 0)
                          )
                          #0.5
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup
+                                                \fontsize #-3
+                                                \raise #0.4
+                                                {
+                                                    \center-column {
+                                                        \line {
+                                                            I
+                                                        }
+                                                        \line {
+                                                            II
+                                                        }
+                                                    }
+                                                }
                         \tweak style #'harmonic
-                        g''32
+                        g''!16.
                         - \abjad-zero-padding-glissando
                         \glissando
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup
+                                                \fontsize #-3
+                                                \raise #0.4
+                                                {
+                                                    \center-column {
+                                                        \line {
+                                                            IV -
+                                                        }
+                                                        \line {
+                                                            VII
+                                                        }
+                                                    }
+                                                }
                         \tweak style #'harmonic
-                        e''16
+                        e''!16
                         - \abjad-zero-padding-glissando
                         \glissando
                         \override Dots.staff-position = #2
                         \once \override NoteHead.X-extent = #'(0 . 0)
                         \once \override NoteHead.transparent = ##t
+                        \revert Dots.staff-position
                         \revert NoteHead.X-extent
                         \revert NoteHead.transparent
-                        \tweak style #'harmonic
-                        c''4
-                          %! abjad.glissando(7)
-                        - \tweak arrow-length #2
-                          %! abjad.glissando(7)
-                        - \tweak arrow-width #0.75
-                          %! abjad.glissando(7)
-                        - \tweak bound-details.right.arrow ##t
-                          %! abjad.glissando(7)
-                        - \abjad-zero-padding-glissando
-                          %! abjad.glissando(7)
-                        \glissando
-                        ~
-                        \revert Dots.staff-position
-                          %! abjad.glissando(1)
-                        \hide NoteHead
-                          %! abjad.glissando(1)
-                        \override Accidental.stencil = ##f
-                          %! abjad.glissando(1)
-                        \override NoteColumn.glissando-skip = ##t
-                          %! abjad.glissando(1)
-                        \override NoteHead.no-ledgers = ##t
                         \afterGrace
                         \tweak style #'harmonic
-                        c''16
+                        c''4
+                        - \tweak arrow-length #2
+                        - \tweak arrow-width #0.75
+                        - \tweak bound-details.right.arrow ##t
+                        - \abjad-zero-padding-glissando
+                        \glissando
                         {
                             \big-half-harmonic
                             \revert Dots.staff-position
-                              %! abjad.glissando(6)
-                            \revert Accidental.stencil
-                              %! abjad.glissando(6)
-                            \revert NoteColumn.glissando-skip
-                              %! abjad.glissando(6)
-                            \revert NoteHead.no-ledgers
-                              %! abjad.glissando(6)
-                            \undo \hide NoteHead
                             a''16
                         }
                           %! +SCORE
@@ -704,19 +1050,435 @@
                         \stopStaff \startStaff
                           %! +SCORE
                     %%% \stopStaff \startStaff
-                          %! +SCORE
-                    %%% \once \override Staff.BarLine.transparent = ##f
-                        \once \revert Staff.StaffSymbol.line-positions
-                        \once \override Staff.Clef.stencil = ##f
-                          %! +SCORE
-                    %%% \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                          %! +SCORE
-                    %%% \once \override Staff.TimeSignature.transparent = ##t
-                          %! +SCORE
-                    %%% \once \override MultiMeasureRest.transparent = ##t
-                        R1 * 5/2
-                          %! +SCORE
-                    %%% \stopStaff \startStaff
+                        \override Dots.staff-position = #2
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup
+                                                    \fontsize #-3
+                                                    \raise #1.5
+                                                    {
+                                                        \center-column {
+                                                            \line {
+                                                                \lower #1.75
+                                                                \override #'(font-name . "ekmelos")
+                                                                \char ##xe00C
+                                                            }
+                                                            \line {
+                                                                II
+                                                            }
+                                                        }
+                                                    }
+                        \tweak style #'harmonic
+                        a''!4.
+                        - \tweak arrow-length #2
+                        - \tweak arrow-width #0.75
+                        - \tweak bound-details.right.arrow ##t
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        \big-half-harmonic
+                        \revert Dots.staff-position
+                        a''32
+                        \override Dots.staff-position = #2
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup
+                                                \fontsize #-3
+                                                \raise #2.25
+                                                {
+                                                    \center-column {
+                                                        \line {
+                                                            \lower #1.75
+                                                            \override #'(font-name . "ekmelos")
+                                                            \char ##xe00C
+                                                        }
+                                                        \line {
+                                                            VI
+                                                        }
+                                                        \line {
+                                                            VII
+                                                        }
+                                                        \line {
+                                                            \raise #1.75
+                                                            \override #'(font-name . "ekmelos")
+                                                            \char ##xe00B
+                                                        }
+                                                    }
+                                                }
+                        \revert NoteHead.X-extent
+                        \revert NoteHead.transparent
+                        f''!16.
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        \once \override NoteHead.X-extent = #'(0 . 0)
+                        \once \override NoteHead.transparent = ##t
+                        a''16.
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        \revert Dots.staff-position
+                        e''32
+                        \override Dots.staff-position = #2
+                        \big-half-harmonic
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup
+                                                    \fontsize #-3
+                                                    \raise #1.5
+                                                    {
+                                                        \center-column {
+                                                            \line {
+                                                                \lower #1.75
+                                                                \override #'(font-name . "ekmelos")
+                                                                \char ##xe00C
+                                                            }
+                                                            \line {
+                                                                II
+                                                            }
+                                                        }
+                                                    }
+                        g''!32
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        \override Dots.staff-position = #2
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup
+                                                \fontsize #-3
+                                                \raise #2.25
+                                                {
+                                                    \center-column {
+                                                        \line {
+                                                            \lower #1.75
+                                                            \override #'(font-name . "ekmelos")
+                                                            \char ##xe00C
+                                                        }
+                                                        \line {
+                                                            VII
+                                                        }
+                                                        \line {
+                                                            VI
+                                                        }
+                                                        \line {
+                                                            \raise #1.75
+                                                            \override #'(font-name . "ekmelos")
+                                                            \char ##xe00B
+                                                        }
+                                                    }
+                                                }
+                        \revert Dots.staff-position
+                        \revert NoteHead.X-extent
+                        \revert NoteHead.transparent
+                        g''!16
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        \once \override NoteHead.X-extent = #'(0 . 0)
+                        \once \override NoteHead.transparent = ##t
+                        a''16
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        \revert Dots.staff-position
+                        e''32
+                        \override Dots.staff-position = #2
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup \fontsize #-3 \lower #0.6 { II }
+                        b'!8
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        ~
+                        \once \override Accidental.stencil = ##f
+                        \once \override NoteHead.no-ledgers = ##t
+                        \once \override NoteHead.transparent = ##t
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        \afterGrace
+                        b'32
+                        {
+                            \once \override Stem.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override NoteHead.no-ledgers = ##t
+                            \once \override Accidental.stencil = ##f
+                            \revert Dots.staff-position
+                            \once \override NoteHead.transparent = ##t
+                              %! abjad.glissando(6)
+                            \revert Accidental.stencil
+                              %! abjad.glissando(6)
+                            \revert NoteColumn.glissando-skip
+                              %! abjad.glissando(6)
+                            \revert NoteHead.no-ledgers
+                              %! abjad.glissando(6)
+                            \undo \hide NoteHead
+                            b'16
+                        }
+                        \override Dots.staff-position = #2
+                        \big-half-harmonic
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup
+                                                    \fontsize #-3
+                                                    \raise #1.5
+                                                    {
+                                                        \center-column {
+                                                            \line {
+                                                                \lower #1.75
+                                                                \override #'(font-name . "ekmelos")
+                                                                \char ##xe00C
+                                                            }
+                                                            \line {
+                                                                II
+                                                            }
+                                                        }
+                                                    }
+                        \afterGrace
+                        a''!32
+                        - \tweak arrow-length #1
+                        - \tweak arrow-width #0.7
+                        - \tweak bound-details.right.arrow ##t
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        {
+                            \revert Dots.staff-position
+                            \tweak style #'harmonic
+                            a''16
+                        }
+                        \override Dots.staff-position = #2
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup \fontsize #-3 \lower #0.6 { VII }
+                        d''!16.
+                        - \tweak arrow-length #2
+                        - \tweak arrow-width #0.75
+                        - \tweak bound-details.right.arrow ##t
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        \override Dots.staff-position = #2
+                        \big-half-harmonic
+                        \fancy-gliss
+                           #'(
+                              (0 0 0.5 1 1 0)
+                              (1 0 1.5 -1 2 0)
+                              (2 0 2.5 1 3 0)
+                              (3 0 3.5 -1 4 0)
+                         )
+                         #0.5
+                        \revert Dots.staff-position
+                        a''16.
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup
+                                                    \fontsize #-3
+                                                    \raise #1.5
+                                                    {
+                                                        \center-column {
+                                                            \line {
+                                                                \lower #1.75
+                                                                \override #'(font-name . "ekmelos")
+                                                                \char ##xe00C
+                                                            }
+                                                            \line {
+                                                                II
+                                                            }
+                                                        }
+                                                    }
+                        \revert Dots.staff-position
+                        \tweak style #'harmonic
+                        e''!32
+                        \override Dots.staff-position = #2
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup
+                                                \fontsize #-3
+                                                \raise #0.4
+                                                {
+                                                    \center-column {
+                                                        \line {
+                                                            VI
+                                                        }
+                                                        \line {
+                                                            VII
+                                                        }
+                                                    }
+                                                }
+                        e''!16.
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        \big-half-harmonic
+                        \revert Dots.staff-position
+                        b''32
+                        \override Dots.staff-position = #2
+                        \fancy-gliss
+                           #'(
+                              (0 0 0.5 1 1 0)
+                              (1 0 1.5 -1 2 0)
+                              (2 0 2.5 1 3 0)
+                              (3 0 3.5 -1 4 0)
+                         )
+                         #0.5
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup \fontsize #-3 \lower #0.6 { II }
+                        \tweak style #'harmonic
+                        f''!32
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        \big-half-harmonic
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup
+                                                \fontsize #-3
+                                                \raise #0.4
+                                                {
+                                                    \center-column {
+                                                        \line {
+                                                            VI
+                                                        }
+                                                        \line {
+                                                            VII
+                                                        }
+                                                    }
+                                                }
+                        b''!8
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        ~
+                        \once \override Accidental.stencil = ##f
+                        \once \override NoteHead.no-ledgers = ##t
+                        \once \override NoteHead.transparent = ##t
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        b''32
+                        \fancy-gliss
+                           #'(
+                              (0 0 0.5 1 1 0)
+                              (1 0 1.5 -1 2 0)
+                              (2 0 2.5 1 3 0)
+                              (3 0 3.5 -1 4 0)
+                              (4 0 4.5 1 5 0)
+                              (5 0 5.5 -1 6 0)
+                         )
+                         #0.5
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup \fontsize #-3 \lower #0.6 { II }
+                          %! abjad.glissando(6)
+                        \revert Accidental.stencil
+                          %! abjad.glissando(6)
+                        \revert NoteColumn.glissando-skip
+                          %! abjad.glissando(6)
+                        \revert NoteHead.no-ledgers
+                          %! abjad.glissando(6)
+                        \undo \hide NoteHead
+                        \tweak style #'harmonic
+                        f''!16
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        \override Dots.staff-position = #2
+                        \revert Dots.staff-position
+                        \tweak style #'harmonic
+                        f''8
+                        - \tweak arrow-length #2
+                        - \tweak arrow-width #0.75
+                        - \tweak bound-details.right.arrow ##t
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        \big-half-harmonic
+                        \revert Dots.staff-position
+                        f''32
+                        \override Dots.staff-position = #2
+                        \revert NoteHead.X-extent
+                        \revert NoteHead.transparent
+                        a''32
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        - \tweak bound-details.left.text \markup { \center-column { \fontsize #-5 \line { VI | VII } } }
+                        \startTrillSpan
+                        \once \override NoteHead.X-extent = #'(0 . 0)
+                        \once \override NoteHead.transparent = ##t
+                        b''32
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        \override Dots.staff-position = #2
+                        \once \override NoteHead.X-extent = #'(0 . 0)
+                        \once \override NoteHead.transparent = ##t
+                        \revert Dots.staff-position
+                        \revert NoteHead.X-extent
+                        \revert NoteHead.transparent
+                        e''32
+                        - \tweak arrow-length #0.75
+                        - \tweak arrow-width #0.75
+                        - \tweak bound-details.right.arrow ##t
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        \revert Dots.staff-position
+                        f''32
+                        r32
+                        \override Dots.staff-position = #2
+                        \revert NoteHead.X-extent
+                        \revert NoteHead.transparent
+                        f''32
+                        \stopTrillSpan
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        - \tweak bound-details.left.text \markup { \center-column { \fontsize #-5 \line { VI | VII } } }
+                        \startTrillSpan
+                        \once \override NoteHead.X-extent = #'(0 . 0)
+                        \once \override NoteHead.transparent = ##t
+                        a''32
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        \override Dots.staff-position = #2
+                        \once \override NoteHead.X-extent = #'(0 . 0)
+                        \once \override NoteHead.transparent = ##t
+                        \revert Dots.staff-position
+                        \revert NoteHead.X-extent
+                        \revert NoteHead.transparent
+                        f''16
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        \revert Dots.staff-position
+                        b''32
+                        r8
+                        \stopTrillSpan
+                        r32
+                        \big-half-harmonic
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup \fontsize #-3 \lower #0.6 { II }
+                        f''!16
+                        \tweak style #'harmonic
+                        f''32
+                        \override Dots.staff-position = #2
+                        \once \override Staff.Accidental.stencil = #ly:text-interface::print
+                        \once \override Staff.Accidental.text = \markup
+                                                \fontsize #-3
+                                                \raise #0.4
+                                                {
+                                                    \center-column {
+                                                        \line {
+                                                            VI
+                                                        }
+                                                        \line {
+                                                            VII
+                                                        }
+                                                    }
+                                                }
+                        \afterGrace
+                        c''!8.
+                        - \abjad-zero-padding-glissando
+                        \glissando
+                        {
+                            \once \override Stem.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override NoteHead.no-ledgers = ##t
+                            \once \override Accidental.stencil = ##f
+                            \revert Dots.staff-position
+                            \once \override NoteHead.transparent = ##t
+                            b''16
+                        }
                           %! +SCORE
                     %%% \once \override Staff.BarLine.transparent = ##f
                         \once \revert Staff.StaffSymbol.line-positions
