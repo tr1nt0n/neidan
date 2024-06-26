@@ -1686,7 +1686,7 @@ trinton.make_music(
             ),
             abjad.LilyPondLiteral(r"\stopMeasureSpanner", site="absolute_after"),
             abjad.BarLine(":|.", site="after"),
-            abjad.LilyPondLiteral(r"\pageBreak", site="absolute_after"),
+            abjad.LilyPondLiteral(r"\break", site="absolute_after"),
         ],
         selector=trinton.select_leaves_by_index([0]),
     ),
@@ -1695,7 +1695,7 @@ trinton.make_music(
             abjad.bundle(
                 abjad.Markup(
                     r"""\markup {
-                        \hspace #110 {
+                        \hspace #55 {
                             \override #'(font-size . 4)
                             \override #'(font-name . "Bodoni72 Book Italic")
                             "attacca"

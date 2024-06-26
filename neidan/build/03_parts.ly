@@ -83,14 +83,14 @@
             s1 * 9/8
             - \tweak X-extent ##f
             ^ \markup {
-                                    \hspace #110 {
+                                    \hspace #55 {
                                         \override #'(font-size . 4)
                                         \override #'(font-name . "Bodoni72 Book Italic")
                                         "attacca"
                                     }
                                 }
             \bar ":|."
-            \pageBreak
+            \break
             \stopMeasureSpanner
         }
         \context StaffGroup = "Staff Group"

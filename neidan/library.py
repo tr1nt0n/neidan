@@ -551,6 +551,7 @@ def fermata_measure_spanner(fermata, measure, voice, repeat=None):
 # metronome marks
 
 _metronome_marks = {
+    "72": """\\abjad-metronome-mark-markup #2 #0 #2 #"72" """,
     "80": """\\abjad-metronome-mark-markup #3 #0 #2 #"80" """,
     "144": """\\abjad-metronome-mark-markup #3 #0 #2 #"144" """,
 }
