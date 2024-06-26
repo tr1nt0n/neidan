@@ -162,8 +162,9 @@ def accidentals(selector, accidental_strings, site="before", arrows=None):
                     if arrows == "down":
                         accidental_markup = rf"""\markup
                             \fontsize #-3
-                            \raise #1.5
+                            \raise #1.1
                             {{
+                                \center-column {{
                                     \line {{
                                         \lower #1.75
                                         {accidental}
@@ -176,12 +177,17 @@ def accidentals(selector, accidental_strings, site="before", arrows=None):
                             }}"""
 
             first_leaf = abjad.select.leaf(tie, 0)
-            first_leaf.note_head.is_forced = True
+            if isinstance(first_leaf, abjad.Chord):
+                note_heads = first_leaf.note_heads
+                note_head = note_heads[0]
+                note_head.is_forced = True
+            else:
+                first_leaf.note_head.is_forced = True
 
             literal = abjad.LilyPondLiteral(
                 [
-                    r"\once \override Staff.Accidental.stencil = #ly:text-interface::print",
-                    rf"\once \override Staff.Accidental.text = {accidental_markup}",
+                    r"\once \override Voice.Accidental.stencil = #ly:text-interface::print",
+                    rf"\once \override Voice.Accidental.text = {accidental_markup}",
                 ],
                 site=site,
             )
